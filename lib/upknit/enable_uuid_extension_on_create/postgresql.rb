@@ -3,7 +3,7 @@ require 'active_record/tasks/postgresql_database_tasks'
 module Upknit
   module EnableUuidExtensionOnCreate
     module PostgreSQL
-      def create(master_established = false)
+      def create(master_established=false)
         super
         connection.enable_uuid
       end
