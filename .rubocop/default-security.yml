@@ -1,0 +1,25 @@
+# Department 'Security' (4):
+Security/Eval:
+  Description: The use of eval represents a serious security risk.
+  Enabled: true
+
+# Supports --auto-correct
+Security/JSONLoad:
+  Description: Prefer usage of `JSON.parse` over `JSON.load` due to potential security
+    issues. See reference for more information.
+  Reference: http://ruby-doc.org/stdlib-2.3.0/libdoc/json/rdoc/JSON.html#method-i-load
+  Enabled: true
+  AutoCorrect: false
+
+Security/MarshalLoad:
+  Description: Avoid using of `Marshal.load` or `Marshal.restore` due to potential security
+    issues. See reference for more information.
+  Reference: http://ruby-doc.org/core-2.3.3/Marshal.html#module-Marshal-label-Security+considerations
+  Enabled: true
+
+# Supports --auto-correct
+Security/YAMLLoad:
+  Description: Prefer usage of `YAML.safe_load` over `YAML.load` due to potential security
+    issues. See reference for more information.
+  Reference: https://ruby-doc.org/stdlib-2.3.3/libdoc/yaml/rdoc/YAML.html#module-YAML-label-Security
+  Enabled: true

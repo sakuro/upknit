@@ -1,0 +1,241 @@
+# Department 'Rails' (32):
+# Supports --auto-correct
+Rails/ActionFilter:
+  Description: Enforces consistent use of action filter methods.
+  Enabled: false
+  EnforcedStyle: action
+  SupportedStyles:
+  - action
+  - filter
+  Include:
+  - app/controllers/**/*.rb
+
+# Supports --auto-correct
+Rails/ActiveSupportAliases:
+  Description: 'Avoid ActiveSupport aliases of standard ruby methods: `String#starts_with?`,
+    `String#ends_with?`, `Array#append`, `Array#prepend`.'
+  Enabled: false
+
+# Supports --auto-correct
+Rails/ApplicationJob:
+  Description: Check that jobs subclass ApplicationJob.
+  Enabled: false
+
+# Supports --auto-correct
+Rails/ApplicationRecord:
+  Description: Check that models subclass ApplicationRecord.
+  Enabled: false
+
+# Supports --auto-correct
+Rails/Blank:
+  Description: Enforce using `blank?` and `present?`.
+  Enabled: false
+  NilOrEmpty: true
+  NotPresent: true
+  UnlessPresent: true
+
+Rails/Date:
+  Description: Checks the correct usage of date aware methods, such as Date.today, Date.current
+    etc.
+  Enabled: false
+  EnforcedStyle: flexible
+  SupportedStyles:
+  - strict
+  - flexible
+
+# Supports --auto-correct
+Rails/Delegate:
+  Description: Prefer delegate method for delegations.
+  Enabled: false
+
+# Supports --auto-correct
+Rails/DelegateAllowBlank:
+  Description: Do not use allow_blank as an option to delegate.
+  Enabled: false
+
+# Supports --auto-correct
+Rails/DynamicFindBy:
+  Description: Use `find_by` instead of dynamic `find_by_*`.
+  StyleGuide: https://github.com/bbatsov/rails-style-guide#find_by
+  Enabled: false
+  Whitelist:
+  - find_by_sql
+
+Rails/EnumUniqueness:
+  Description: Avoid duplicate integers in hash-syntax `enum` declaration.
+  Enabled: false
+  Include:
+  - app/models/**/*.rb
+
+Rails/Exit:
+  Description: Favor `fail`, `break`, `return`, etc. over `exit` in application or library
+    code outside of Rake files to avoid exits during unit testing or running in production.
+  Enabled: false
+  Include:
+  - app/**/*.rb
+  - config/**/*.rb
+  - lib/**/*.rb
+  Exclude:
+  - lib/**/*.rake
+
+Rails/FilePath:
+  Description: Use `Rails.root.join` for file path joining.
+  Enabled: false
+
+# Supports --auto-correct
+Rails/FindBy:
+  Description: Prefer find_by over where.first.
+  StyleGuide: https://github.com/bbatsov/rails-style-guide#find_by
+  Enabled: false
+  Include:
+  - app/models/**/*.rb
+
+# Supports --auto-correct
+Rails/FindEach:
+  Description: Prefer all.find_each over all.find.
+  StyleGuide: https://github.com/bbatsov/rails-style-guide#find-each
+  Enabled: false
+  Include:
+  - app/models/**/*.rb
+
+Rails/HasAndBelongsToMany:
+  Description: Prefer has_many :through to has_and_belongs_to_many.
+  StyleGuide: https://github.com/bbatsov/rails-style-guide#has-many-through
+  Enabled: false
+  Include:
+  - app/models/**/*.rb
+
+# Supports --auto-correct
+Rails/HttpPositionalArguments:
+  Description: Use keyword arguments instead of positional arguments in http method
+    calls.
+  Enabled: false
+  Include:
+  - spec/**/*
+  - test/**/*
+
+Rails/NotNullColumn:
+  Description: Do not add a NOT NULL column without a default value
+  Enabled: false
+  Include:
+  - db/migrate/*.rb
+
+Rails/Output:
+  Description: Checks for calls to puts, print, etc.
+  Enabled: false
+  Include:
+  - app/**/*.rb
+  - config/**/*.rb
+  - db/**/*.rb
+  - lib/**/*.rb
+
+Rails/OutputSafety:
+  Description: The use of `html_safe` or `raw` may be a security risk.
+  Enabled: false
+
+# Supports --auto-correct
+Rails/PluralizationGrammar:
+  Description: Checks for incorrect grammar when using methods like `3.day.ago`.
+  Enabled: false
+
+# Supports --auto-correct
+Rails/Present:
+  Description: Enforce using `blank?` and `present?`.
+  Enabled: false
+  NotNilAndNotEmpty: true
+  NotBlank: true
+  UnlessBlank: true
+
+# Supports --auto-correct
+Rails/ReadWriteAttribute:
+  Description: Checks for read_attribute(:attr) and write_attribute(:attr, val).
+  StyleGuide: https://github.com/bbatsov/rails-style-guide#read-attribute
+  Enabled: false
+  Include:
+  - app/models/**/*.rb
+
+# Supports --auto-correct
+Rails/RelativeDateConstant:
+  Description: Do not assign relative date to constants.
+  Enabled: false
+
+# Supports --auto-correct
+Rails/RequestReferer:
+  Description: Use consistent syntax for request.referer.
+  Enabled: false
+  EnforcedStyle: referer
+  SupportedStyles:
+  - referer
+  - referrer
+
+Rails/ReversibleMigration:
+  Description: Checks whether the change method of the migration file is reversible.
+  StyleGuide: https://github.com/bbatsov/rails-style-guide#reversible-migration
+  Reference: http://api.rubyonrails.org/classes/ActiveRecord/Migration/CommandRecorder.html
+  Enabled: false
+  Include:
+  - db/migrate/*.rb
+
+# Supports --auto-correct
+Rails/SafeNavigation:
+  Description: Use Ruby's safe navigation operator (`&.`) instead of `try!`
+  Enabled: false
+  ConvertTry: false
+
+# Supports --auto-correct
+Rails/SaveBang:
+  Description: Identifies possible cases where Active Record save! or related should
+    be used.
+  StyleGuide: https://github.com/bbatsov/rails-style-guide#save-bang
+  Enabled: false
+
+Rails/ScopeArgs:
+  Description: Checks the arguments of ActiveRecord scopes.
+  Enabled: false
+  Include:
+  - app/models/**/*.rb
+
+Rails/SkipsModelValidations:
+  Description: Use methods that skips model validations with caution. See reference
+    for more information.
+  Reference: http://guides.rubyonrails.org/active_record_validations.html#skipping-validations
+  Enabled: false
+  Blacklist:
+  - decrement!
+  - decrement_counter
+  - increment!
+  - increment_counter
+  - toggle!
+  - touch
+  - update_all
+  - update_attribute
+  - update_column
+  - update_columns
+  - update_counters
+
+Rails/TimeZone:
+  Description: Checks the correct usage of time zone aware methods.
+  StyleGuide: https://github.com/bbatsov/rails-style-guide#time
+  Reference: http://danilenko.org/2012/7/6/rails_timezones
+  Enabled: false
+  EnforcedStyle: flexible
+  SupportedStyles:
+  - strict
+  - flexible
+
+# Supports --auto-correct
+Rails/UniqBeforePluck:
+  Description: Prefer the use of uniq or distinct before pluck.
+  Enabled: false
+  EnforcedStyle: conservative
+  SupportedStyles:
+  - conservative
+  - aggressive
+  AutoCorrect: false
+
+# Supports --auto-correct
+Rails/Validation:
+  Description: Use validates :attribute, hash of validations.
+  Enabled: false
+  Include:
+  - app/models/**/*.rb

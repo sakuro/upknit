@@ -1,0 +1,1184 @@
+# Department 'Style' (144):
+Style/AccessorMethodName:
+  Description: Check the naming of accessor methods for get_/set_.
+  StyleGuide: "#accessor_mutator_method_names"
+  Enabled: true
+
+# Supports --auto-correct
+Style/Alias:
+  Description: Use alias instead of alias_method.
+  StyleGuide: "#alias-method"
+  Enabled: true
+  EnforcedStyle: prefer_alias
+  SupportedStyles:
+  - prefer_alias
+  - prefer_alias_method
+
+# Supports --auto-correct
+Style/AndOr:
+  Description: Use &&/|| instead of and/or.
+  StyleGuide: "#no-and-or-or"
+  Enabled: true
+  EnforcedStyle: always
+  SupportedStyles:
+  - always
+  - conditionals
+
+# Supports --auto-correct
+Style/ArrayJoin:
+  Description: Use Array#join instead of Array#*.
+  StyleGuide: "#array-join"
+  Enabled: true
+
+Style/AsciiComments:
+  Description: Use only ascii symbols in comments.
+  StyleGuide: "#english-comments"
+  Enabled: true
+
+Style/AsciiIdentifiers:
+  Description: Use only ascii symbols in identifiers.
+  StyleGuide: "#english-identifiers"
+  Enabled: true
+
+# Supports --auto-correct
+Style/Attr:
+  Description: Checks for uses of Module#attr.
+  StyleGuide: "#attr"
+  Enabled: true
+
+Style/AutoResourceCleanup:
+  Description: Suggests the usage of an auto resource cleanup version of a method (if
+    available).
+  Enabled: false
+
+# Supports --auto-correct
+Style/BarePercentLiterals:
+  Description: Checks if usage of %() or %Q() matches configuration.
+  StyleGuide: "#percent-q-shorthand"
+  Enabled: true
+  EnforcedStyle: bare_percent
+  SupportedStyles:
+  - percent_q
+  - bare_percent
+
+Style/BeginBlock:
+  Description: Avoid the use of BEGIN blocks.
+  StyleGuide: "#no-BEGIN-blocks"
+  Enabled: true
+
+# Supports --auto-correct
+Style/BlockComments:
+  Description: Do not use block comments.
+  StyleGuide: "#no-block-comments"
+  Enabled: true
+
+# Supports --auto-correct
+Style/BlockDelimiters:
+  Description: Avoid using {...} for multi-line blocks (multiline chaining is always
+    ugly). Prefer {...} over do...end for single-line blocks.
+  StyleGuide: "#single-line-blocks"
+  Enabled: true
+  EnforcedStyle: line_count_based
+  SupportedStyles:
+  - line_count_based
+  - semantic
+  - braces_for_chaining
+  ProceduralMethods:
+  - benchmark
+  - bm
+  - bmbm
+  - create
+  - each_with_object
+  - measure
+  - new
+  - realtime
+  - tap
+  - with_object
+  FunctionalMethods:
+  - let
+  - let!
+  - subject
+  - watch
+  IgnoredMethods:
+  - lambda
+  - proc
+  - it
+
+# Supports --auto-correct
+Style/BracesAroundHashParameters:
+  Description: Enforce braces style around hash parameters.
+  Enabled: true
+  EnforcedStyle: no_braces
+  SupportedStyles:
+  - braces
+  - no_braces
+  - context_dependent
+
+Style/CaseEquality:
+  Description: Avoid explicit use of the case equality operator(===).
+  StyleGuide: "#no-case-equality"
+  Enabled: true
+
+# Supports --auto-correct
+Style/CharacterLiteral:
+  Description: Checks for uses of character literals.
+  StyleGuide: "#no-character-literals"
+  Enabled: true
+
+Style/ClassAndModuleCamelCase:
+  Description: Use CamelCase for classes and modules.
+  StyleGuide: "#camelcase-classes"
+  Enabled: true
+
+Style/ClassAndModuleChildren:
+  Description: Checks style of children classes and modules.
+  Enabled: true
+  EnforcedStyle: nested
+  SupportedStyles:
+  - nested
+  - compact
+
+# Supports --auto-correct
+Style/ClassCheck:
+  Description: Enforces consistent use of `Object#is_a?` or `Object#kind_of?`.
+  Enabled: true
+  EnforcedStyle: is_a?
+  SupportedStyles:
+  - is_a?
+  - kind_of?
+
+# Supports --auto-correct
+Style/ClassMethods:
+  Description: Use self when defining module/class methods.
+  StyleGuide: "#def-self-class-methods"
+  Enabled: true
+
+Style/ClassVars:
+  Description: Avoid the use of class variables.
+  StyleGuide: "#no-class-vars"
+  Enabled: true
+
+# Supports --auto-correct
+Style/CollectionMethods:
+  Description: Preferred collection methods.
+  StyleGuide: "#map-find-select-reduce-size"
+  Enabled: false
+  PreferredMethods:
+    collect: map
+    collect!: map!
+    inject: reduce
+    detect: find
+    find_all: select
+
+# Supports --auto-correct
+Style/ColonMethodCall:
+  Description: 'Do not use :: for method call.'
+  StyleGuide: "#double-colons"
+  Enabled: true
+
+# Supports --auto-correct
+Style/CommandLiteral:
+  Description: Use `` or %x around command literals.
+  StyleGuide: "#percent-x"
+  Enabled: true
+  EnforcedStyle: backticks
+  SupportedStyles:
+  - backticks
+  - percent_x
+  - mixed
+  AllowInnerBackticks: false
+
+# Supports --auto-correct
+Style/CommentAnnotation:
+  Description: Checks formatting of special comments (TODO, FIXME, OPTIMIZE, HACK, REVIEW).
+  StyleGuide: "#annotate-keywords"
+  Enabled: true
+  Keywords:
+  - TODO
+  - FIXME
+  - OPTIMIZE
+  - HACK
+  - REVIEW
+
+# Supports --auto-correct
+Style/ConditionalAssignment:
+  Description: Use the return value of `if` and `case` statements for assignment to
+    a variable and variable comparison instead of assigning that variable inside of
+    each branch.
+  Enabled: true
+  EnforcedStyle: assign_to_condition
+  SupportedStyles:
+  - assign_to_condition
+  - assign_inside_condition
+  SingleLineConditionsOnly: true
+  IncludeTernaryExpressions: true
+
+Style/ConstantName:
+  Description: Constants should use SCREAMING_SNAKE_CASE.
+  StyleGuide: "#screaming-snake-case"
+  Enabled: true
+
+# Supports --auto-correct
+Style/Copyright:
+  Description: Include a copyright notice in each file before any code.
+  Enabled: false
+  Notice: "^Copyright (\\(c\\) )?2[0-9]{3} .+"
+  AutocorrectNotice: ''
+
+# Supports --auto-correct
+Style/DefWithParentheses:
+  Description: Use def with parentheses when there are arguments.
+  StyleGuide: "#method-parens"
+  Enabled: true
+
+Style/Documentation:
+  Description: Document classes and non-namespace modules.
+  Enabled: true
+  Exclude:
+  - spec/**/*
+  - test/**/*
+
+Style/DocumentationMethod:
+  Description: Public methods.
+  Enabled: false
+  Exclude:
+  - spec/**/*
+  - test/**/*
+  RequireForNonPublicMethods: false
+
+Style/DoubleNegation:
+  Description: Checks for uses of double negation (!!).
+  StyleGuide: "#no-bang-bang"
+  Enabled: true
+
+# Supports --auto-correct
+Style/EachForSimpleLoop:
+  Description: Use `Integer#times` for a simple loop which iterates a fixed number of
+    times.
+  Enabled: true
+
+# Supports --auto-correct
+Style/EachWithObject:
+  Description: Prefer `each_with_object` over `inject` or `reduce`.
+  Enabled: true
+
+# Supports --auto-correct
+Style/EmptyCaseCondition:
+  Description: Avoid empty condition in case statements.
+  Enabled: true
+
+# Supports --auto-correct
+Style/EmptyElse:
+  Description: Avoid empty else-clauses.
+  Enabled: true
+  EnforcedStyle: both
+  SupportedStyles:
+  - empty
+  - nil
+  - both
+
+# Supports --auto-correct
+Style/EmptyLiteral:
+  Description: Prefer literals to Array.new/Hash.new/String.new.
+  StyleGuide: "#literal-array-hash"
+  Enabled: true
+
+# Supports --auto-correct
+Style/EmptyMethod:
+  Description: Checks the formatting of empty method definitions.
+  StyleGuide: "#no-single-line-methods"
+  Enabled: true
+  EnforcedStyle: compact
+  SupportedStyles:
+  - compact
+  - expanded
+
+# Supports --auto-correct
+Style/Encoding:
+  Description: Use UTF-8 as the source file encoding.
+  StyleGuide: "#utf-8"
+  Enabled: false
+  EnforcedStyle: never
+  SupportedStyles:
+  - when_needed
+  - always
+  - never
+  AutoCorrectEncodingComment: "# encoding: utf-8"
+
+Style/EndBlock:
+  Description: Avoid the use of END blocks.
+  StyleGuide: "#no-END-blocks"
+  Enabled: true
+
+# Supports --auto-correct
+Style/EvenOdd:
+  Description: Favor the use of Integer#even? && Integer#odd?
+  StyleGuide: "#predicate-methods"
+  Enabled: true
+
+Style/FileName:
+  Description: Use snake_case for source file names.
+  StyleGuide: "#snake-case-files"
+  Enabled: true
+  Exclude: []
+  ExpectMatchingDefinition: false
+  Regex:
+  IgnoreExecutableScripts: true
+  AllowedAcronyms:
+  - CLI
+  - DSL
+  - ACL
+  - API
+  - ASCII
+  - CPU
+  - CSS
+  - DNS
+  - EOF
+  - GUID
+  - HTML
+  - HTTP
+  - HTTPS
+  - ID
+  - IP
+  - JSON
+  - LHS
+  - QPS
+  - RAM
+  - RHS
+  - RPC
+  - SLA
+  - SMTP
+  - SQL
+  - SSH
+  - TCP
+  - TLS
+  - TTL
+  - UDP
+  - UI
+  - UID
+  - UUID
+  - URI
+  - URL
+  - UTF8
+  - VM
+  - XML
+  - XMPP
+  - XSRF
+  - XSS
+
+Style/FlipFlop:
+  Description: Checks for flip flops
+  StyleGuide: "#no-flip-flops"
+  Enabled: true
+
+Style/For:
+  Description: Checks use of for or each in multiline loops.
+  StyleGuide: "#no-for-loops"
+  Enabled: true
+  EnforcedStyle: each
+  SupportedStyles:
+  - for
+  - each
+
+# Supports --auto-correct
+Style/FormatString:
+  Description: Enforce the use of Kernel#sprintf, Kernel#format or String#%.
+  StyleGuide: "#sprintf"
+  Enabled: true
+  EnforcedStyle: format
+  SupportedStyles:
+  - format
+  - sprintf
+  - percent
+
+Style/FormatStringToken:
+  Description: Use a consistent style for format string tokens.
+  Enabled: true
+  EnforcedStyle: annotated
+  SupportedStyles:
+  - annotated
+  - template
+
+# Supports --auto-correct
+Style/FrozenStringLiteralComment:
+  Description: Add the frozen_string_literal comment to the top of files to help transition
+    from Ruby 2.3.0 to Ruby 3.0.
+  Enabled: true
+  EnforcedStyle: when_needed
+  SupportedStyles:
+  - when_needed
+  - always
+  - never
+
+Style/GlobalVars:
+  Description: Do not introduce global variables.
+  StyleGuide: "#instance-vars"
+  Reference: http://www.zenspider.com/Languages/Ruby/QuickRef.html
+  Enabled: true
+  AllowedVariables: []
+
+Style/GuardClause:
+  Description: Check for conditionals that can be replaced with guard clauses
+  StyleGuide: "#no-nested-conditionals"
+  Enabled: true
+  MinBodyLength: 1
+
+# Supports --auto-correct
+Style/HashSyntax:
+  Description: 'Prefer Ruby 1.9 hash syntax { a: 1, b: 2 } over 1.8 syntax { :a => 1,
+    :b => 2 }.'
+  StyleGuide: "#hash-literals"
+  Enabled: true
+  EnforcedStyle: ruby19
+  SupportedStyles:
+  - ruby19
+  - hash_rockets
+  - no_mixed_keys
+  - ruby19_no_mixed_keys
+  UseHashRocketsWithSymbolValues: false
+  PreferHashRocketsForNonAlnumEndingSymbols: false
+
+Style/IdenticalConditionalBranches:
+  Description: Checks that conditional statements do not have an identical line at the
+    end of each branch, which can validly be moved out of the conditional.
+  Enabled: true
+
+Style/IfInsideElse:
+  Description: Finds if nodes inside else, which can be converted to elsif.
+  Enabled: true
+
+# Supports --auto-correct
+Style/IfUnlessModifier:
+  Description: Favor modifier if/unless usage when you have a single-line body.
+  StyleGuide: "#if-as-a-modifier"
+  Enabled: true
+  MaxLineLength: 80
+
+Style/IfUnlessModifierOfIfUnless:
+  Description: Avoid modifier if/unless usage on conditionals.
+  Enabled: true
+
+Style/IfWithSemicolon:
+  Description: Do not use if x; .... Use the ternary operator instead.
+  StyleGuide: "#no-semicolon-ifs"
+  Enabled: true
+
+Style/ImplicitRuntimeError:
+  Description: Use `raise` or `fail` with an explicit exception class and message, rather
+    than just a message.
+  Enabled: false
+
+# Supports --auto-correct
+Style/InfiniteLoop:
+  Description: Use Kernel#loop for infinite loops.
+  StyleGuide: "#infinite-loop"
+  Enabled: true
+
+Style/InlineComment:
+  Description: Avoid trailing inline comments.
+  Enabled: false
+
+# Supports --auto-correct
+Style/InverseMethods:
+  Description: Use the inverse method instead of `!.method` if an inverse method is
+    defined.
+  Enabled: true
+  InverseMethods:
+    :any?: :none?
+    :even?: :odd?
+    :==: :!=
+    :=~: :!~
+    :<: :>=
+    :>: :<=
+  InverseBlocks:
+    :select: :reject
+    :select!: :reject!
+
+# Supports --auto-correct
+Style/Lambda:
+  Description: Use the new lambda literal syntax for single-line blocks.
+  StyleGuide: "#lambda-multi-line"
+  Enabled: true
+  EnforcedStyle: line_count_dependent
+  SupportedStyles:
+  - line_count_dependent
+  - lambda
+  - literal
+
+# Supports --auto-correct
+Style/LambdaCall:
+  Description: Use lambda.call(...) instead of lambda.(...).
+  StyleGuide: "#proc-call"
+  Enabled: true
+  EnforcedStyle: call
+  SupportedStyles:
+  - call
+  - braces
+
+# Supports --auto-correct
+Style/LineEndConcatenation:
+  Description: Use \ instead of + or << to concatenate two string literals at line end.
+  Enabled: true
+
+# Supports --auto-correct
+Style/MethodCallWithArgsParentheses:
+  Description: Use parentheses for method calls with arguments.
+  StyleGuide: "#method-invocation-parens"
+  Enabled: false
+  IgnoreMacros: true
+  IgnoredMethods: []
+
+# Supports --auto-correct
+Style/MethodCallWithoutArgsParentheses:
+  Description: Do not use parentheses for method calls with no arguments.
+  StyleGuide: "#method-invocation-parens"
+  Enabled: true
+
+Style/MethodCalledOnDoEndBlock:
+  Description: Avoid chaining a method call on a do...end block.
+  StyleGuide: "#single-line-blocks"
+  Enabled: false
+
+# Supports --auto-correct
+Style/MethodDefParentheses:
+  Description: Checks if the method definitions have or don't have parentheses.
+  StyleGuide: "#method-parens"
+  Enabled: true
+  EnforcedStyle: require_parentheses
+  SupportedStyles:
+  - require_parentheses
+  - require_no_parentheses
+  - require_no_parentheses_except_multiline
+
+Style/MethodMissing:
+  Description: Avoid using `method_missing`.
+  StyleGuide: "#no-method-missing"
+  Enabled: true
+
+Style/MethodName:
+  Description: Use the configured style when naming methods.
+  StyleGuide: "#snake-case-symbols-methods-vars"
+  Enabled: true
+  EnforcedStyle: snake_case
+  SupportedStyles:
+  - snake_case
+  - camelCase
+
+Style/MissingElse:
+  Description: Require if/case expressions to have an else branches. If enabled, it
+    is recommended that Style/UnlessElse and Style/EmptyElse be enabled. This will conflict
+    with Style/EmptyElse if Style/EmptyElse is configured to style "both"
+  Enabled: false
+  EnforcedStyle: both
+  SupportedStyles:
+  - if
+  - case
+  - both
+
+# Supports --auto-correct
+Style/MixinGrouping:
+  Description: Checks for grouping of mixins in `class` and `module` bodies.
+  StyleGuide: "#mixin-grouping"
+  Enabled: true
+  EnforcedStyle: separated
+  SupportedStyles:
+  - separated
+  - grouped
+
+Style/ModuleFunction:
+  Description: Checks for usage of `extend self` in modules.
+  StyleGuide: "#module-function"
+  Enabled: true
+  EnforcedStyle: module_function
+  SupportedStyles:
+  - module_function
+  - extend_self
+
+Style/MultilineBlockChain:
+  Description: Avoid multi-line chains of blocks.
+  StyleGuide: "#single-line-blocks"
+  Enabled: true
+
+# Supports --auto-correct
+Style/MultilineIfModifier:
+  Description: Only use if/unless modifiers on single line statements.
+  StyleGuide: "#no-multiline-if-modifiers"
+  Enabled: true
+
+# Supports --auto-correct
+Style/MultilineIfThen:
+  Description: Do not use then for multi-line if/unless.
+  StyleGuide: "#no-then"
+  Enabled: true
+
+# Supports --auto-correct
+Style/MultilineMemoization:
+  Description: Wrap multiline memoizations in a `begin` and `end` block.
+  Enabled: true
+  EnforcedStyle: keyword
+  SupportedStyles:
+  - keyword
+  - braces
+
+Style/MultilineTernaryOperator:
+  Description: 'Avoid multi-line ?: (the ternary operator); use if/unless instead.'
+  StyleGuide: "#no-multiline-ternary"
+  Enabled: true
+
+Style/MultipleComparison:
+  Description: Avoid comparing a variable with multiple items in a conditional, use
+    Array#include? instead.
+  Enabled: true
+
+# Supports --auto-correct
+Style/MutableConstant:
+  Description: Do not assign mutable objects to constants.
+  Enabled: true
+
+# Supports --auto-correct
+Style/NegatedIf:
+  Description: Favor unless over if for negative conditions (or control flow or).
+  StyleGuide: "#unless-for-negatives"
+  Enabled: true
+  EnforcedStyle: both
+  SupportedStyles:
+  - both
+  - prefix
+  - postfix
+
+# Supports --auto-correct
+Style/NegatedWhile:
+  Description: Favor until over while for negative conditions.
+  StyleGuide: "#until-for-negatives"
+  Enabled: true
+
+# Supports --auto-correct
+Style/NestedModifier:
+  Description: Avoid using nested modifiers.
+  StyleGuide: "#no-nested-modifiers"
+  Enabled: true
+
+# Supports --auto-correct
+Style/NestedParenthesizedCalls:
+  Description: Parenthesize method calls which are nested inside the argument list of
+    another parenthesized method call.
+  Enabled: true
+
+Style/NestedTernaryOperator:
+  Description: Use one expression per branch in a ternary operator.
+  StyleGuide: "#no-nested-ternary"
+  Enabled: true
+
+# Supports --auto-correct
+Style/Next:
+  Description: Use `next` to skip iteration instead of a condition at the end.
+  StyleGuide: "#no-nested-conditionals"
+  Enabled: true
+  EnforcedStyle: skip_modifier_ifs
+  MinBodyLength: 3
+  SupportedStyles:
+  - skip_modifier_ifs
+  - always
+
+# Supports --auto-correct
+Style/NilComparison:
+  Description: Prefer x.nil? to x == nil.
+  StyleGuide: "#predicate-methods"
+  Enabled: true
+
+# Supports --auto-correct
+Style/NonNilCheck:
+  Description: Checks for redundant nil checks.
+  StyleGuide: "#no-non-nil-checks"
+  Enabled: true
+  IncludeSemanticChanges: false
+
+# Supports --auto-correct
+Style/Not:
+  Description: Use ! instead of not.
+  StyleGuide: "#bang-not-not"
+  Enabled: true
+
+# Supports --auto-correct
+Style/NumericLiteralPrefix:
+  Description: Use smallcase prefixes for numeric literals.
+  StyleGuide: "#numeric-literal-prefixes"
+  Enabled: true
+  EnforcedOctalStyle: zero_with_o
+  SupportedOctalStyles:
+  - zero_with_o
+  - zero_only
+
+# Supports --auto-correct
+Style/NumericLiterals:
+  Description: Add underscores to large numeric literals to improve their readability.
+  StyleGuide: "#underscores-in-numerics"
+  Enabled: true
+  MinDigits: 5
+  Strict: false
+
+# Supports --auto-correct
+Style/NumericPredicate:
+  Description: Checks for the use of predicate- or comparison methods for numeric comparisons.
+  StyleGuide: "#predicate-methods"
+  AutoCorrect: false
+  Enabled: true
+  EnforcedStyle: predicate
+  SupportedStyles:
+  - predicate
+  - comparison
+  Exclude:
+  - spec/**/*
+
+# Supports --auto-correct
+Style/OneLineConditional:
+  Description: Favor the ternary operator(?:) over if/then/else/end constructs.
+  StyleGuide: "#ternary-operator"
+  Enabled: true
+
+Style/OpMethod:
+  Description: When defining binary operators, name the argument other.
+  StyleGuide: "#other-arg"
+  Enabled: true
+
+Style/OptionHash:
+  Description: Don't use option hashes when you can use keyword arguments.
+  Enabled: false
+  SuspiciousParamNames:
+  - options
+  - opts
+  - args
+  - params
+  - parameters
+
+Style/OptionalArguments:
+  Description: Checks for optional arguments that do not appear at the end of the argument
+    list
+  StyleGuide: "#optional-arguments"
+  Enabled: true
+
+# Supports --auto-correct
+Style/ParallelAssignment:
+  Description: Check for simple usages of parallel assignment. It will only warn when
+    the number of variables matches on both sides of the assignment.
+  StyleGuide: "#parallel-assignment"
+  Enabled: true
+
+# Supports --auto-correct
+Style/ParenthesesAroundCondition:
+  Description: Don't use parentheses around the condition of an if/unless/while.
+  StyleGuide: "#no-parens-around-condition"
+  Enabled: true
+  AllowSafeAssignment: true
+
+# Supports --auto-correct
+Style/PercentLiteralDelimiters:
+  Description: Use `%`-literal delimiters consistently
+  StyleGuide: "#percent-literal-braces"
+  Enabled: true
+  PreferredDelimiters:
+    default: "()"
+    "%i": "[]"
+    "%I": "[]"
+    "%r": "{}"
+    "%w": "[]"
+    "%W": "[]"
+
+# Supports --auto-correct
+Style/PercentQLiterals:
+  Description: Checks if uses of %Q/%q match the configured preference.
+  Enabled: true
+  EnforcedStyle: lower_case_q
+  SupportedStyles:
+  - lower_case_q
+  - upper_case_q
+
+# Supports --auto-correct
+Style/PerlBackrefs:
+  Description: Avoid Perl-style regex back references.
+  StyleGuide: "#no-perl-regexp-last-matchers"
+  Enabled: true
+
+Style/PredicateName:
+  Description: Check the names of predicate methods.
+  StyleGuide: "#bool-methods-qmark"
+  Enabled: true
+  NamePrefix:
+  - is_
+  - has_
+  - have_
+  NamePrefixBlacklist:
+  - is_
+  - has_
+  - have_
+  NameWhitelist:
+  - is_a?
+  Exclude:
+  - spec/**/*
+
+# Supports --auto-correct
+Style/PreferredHashMethods:
+  Description: Checks use of `has_key?` and `has_value?` Hash methods.
+  StyleGuide: "#hash-key"
+  Enabled: true
+  EnforcedStyle: short
+  SupportedStyles:
+  - short
+  - verbose
+
+# Supports --auto-correct
+Style/Proc:
+  Description: Use proc instead of Proc.new.
+  StyleGuide: "#proc"
+  Enabled: true
+
+# Supports --auto-correct
+Style/RaiseArgs:
+  Description: Checks the arguments passed to raise/fail.
+  StyleGuide: "#exception-class-messages"
+  Enabled: true
+  EnforcedStyle: exploded
+  SupportedStyles:
+  - compact
+  - exploded
+
+# Supports --auto-correct
+Style/RedundantBegin:
+  Description: Don't use begin blocks when they are not needed.
+  StyleGuide: "#begin-implicit"
+  Enabled: true
+
+# Supports --auto-correct
+Style/RedundantException:
+  Description: Checks for an obsolete RuntimeException argument in raise/fail.
+  StyleGuide: "#no-explicit-runtimeerror"
+  Enabled: true
+
+# Supports --auto-correct
+Style/RedundantFreeze:
+  Description: Checks usages of Object#freeze on immutable objects.
+  Enabled: true
+
+# Supports --auto-correct
+Style/RedundantParentheses:
+  Description: Checks for parentheses that seem not to serve any purpose.
+  Enabled: true
+
+# Supports --auto-correct
+Style/RedundantReturn:
+  Description: Don't use return where it's not required.
+  StyleGuide: "#no-explicit-return"
+  Enabled: true
+  AllowMultipleReturnValues: false
+
+# Supports --auto-correct
+Style/RedundantSelf:
+  Description: Don't use self where it's not needed.
+  StyleGuide: "#no-self-unless-required"
+  Enabled: true
+
+# Supports --auto-correct
+Style/RegexpLiteral:
+  Description: Use / or %r around regular expressions.
+  StyleGuide: "#percent-r"
+  Enabled: true
+  EnforcedStyle: slashes
+  SupportedStyles:
+  - slashes
+  - percent_r
+  - mixed
+  AllowInnerSlashes: false
+
+# Supports --auto-correct
+Style/RescueModifier:
+  Description: Avoid using rescue in its modifier form.
+  StyleGuide: "#no-rescue-modifiers"
+  Enabled: true
+
+# Supports --auto-correct
+Style/SafeNavigation:
+  Description: This cop transforms usages of a method call safeguarded by a check for
+    the existance of the object to safe navigation (`&.`).
+  Enabled: true
+  ConvertCodeThatCanStartToReturnNil: false
+
+# Supports --auto-correct
+Style/SelfAssignment:
+  Description: Checks for places where self-assignment shorthand should have been used.
+  StyleGuide: "#self-assignment"
+  Enabled: true
+
+# Supports --auto-correct
+Style/Semicolon:
+  Description: Don't use semicolons to terminate expressions.
+  StyleGuide: "#no-semicolon"
+  Enabled: true
+  AllowAsExpressionSeparator: false
+
+Style/Send:
+  Description: Prefer `Object#__send__` or `Object#public_send` to `send`, as `send`
+    may overlap with existing methods.
+  StyleGuide: "#prefer-public-send"
+  Enabled: false
+
+# Supports --auto-correct
+Style/SignalException:
+  Description: Checks for proper usage of fail and raise.
+  StyleGuide: "#prefer-raise-over-fail"
+  Enabled: true
+  EnforcedStyle: only_raise
+  SupportedStyles:
+  - only_raise
+  - only_fail
+  - semantic
+
+Style/SingleLineBlockParams:
+  Description: Enforces the names of some block params.
+  Enabled: false
+  Methods:
+  - reduce:
+    - acc
+    - elem
+  - inject:
+    - acc
+    - elem
+
+# Supports --auto-correct
+Style/SingleLineMethods:
+  Description: Avoid single-line methods.
+  StyleGuide: "#no-single-line-methods"
+  Enabled: true
+  AllowIfMethodIsEmpty: true
+
+# Supports --auto-correct
+Style/SpecialGlobalVars:
+  Description: Avoid Perl-style global variables.
+  StyleGuide: "#no-cryptic-perlisms"
+  Enabled: true
+  EnforcedStyle: use_english_names
+  SupportedStyles:
+  - use_perl_names
+  - use_english_names
+
+# Supports --auto-correct
+Style/StabbyLambdaParentheses:
+  Description: Check for the usage of parentheses around stabby lambda arguments.
+  StyleGuide: "#stabby-lambda-with-args"
+  Enabled: true
+  EnforcedStyle: require_parentheses
+  SupportedStyles:
+  - require_parentheses
+  - require_no_parentheses
+
+# Supports --auto-correct
+Style/StringLiterals:
+  Description: Checks if uses of quotes match the configured preference.
+  StyleGuide: "#consistent-string-literals"
+  Enabled: true
+  EnforcedStyle: single_quotes
+  SupportedStyles:
+  - single_quotes
+  - double_quotes
+  ConsistentQuotesInMultiline: false
+
+# Supports --auto-correct
+Style/StringLiteralsInInterpolation:
+  Description: Checks if uses of quotes inside expressions in interpolated strings match
+    the configured preference.
+  Enabled: true
+  EnforcedStyle: single_quotes
+  SupportedStyles:
+  - single_quotes
+  - double_quotes
+
+# Supports --auto-correct
+Style/StringMethods:
+  Description: Checks if configured preferred methods are used over non-preferred.
+  Enabled: false
+  PreferredMethods:
+    intern: to_sym
+
+Style/StructInheritance:
+  Description: Checks for inheritance from Struct.new.
+  StyleGuide: "#no-extend-struct-new"
+  Enabled: true
+
+# Supports --auto-correct
+Style/SymbolArray:
+  Description: Use %i or %I for arrays of symbols.
+  StyleGuide: "#percent-i"
+  Enabled: true
+  EnforcedStyle: percent
+  MinSize: 0
+  SupportedStyles:
+  - percent
+  - brackets
+
+# Supports --auto-correct
+Style/SymbolLiteral:
+  Description: Use plain symbols instead of string symbols when possible.
+  Enabled: true
+
+# Supports --auto-correct
+Style/SymbolProc:
+  Description: Use symbols as procs instead of blocks when possible.
+  Enabled: true
+  IgnoredMethods:
+  - respond_to
+  - define_method
+
+# Supports --auto-correct
+Style/TernaryParentheses:
+  Description: Checks for use of parentheses around ternary conditions.
+  Enabled: true
+  EnforcedStyle: require_no_parentheses
+  SupportedStyles:
+  - require_parentheses
+  - require_no_parentheses
+  - require_parentheses_when_complex
+  AllowSafeAssignment: true
+
+# Supports --auto-correct
+Style/TrailingCommaInArguments:
+  Description: Checks for trailing comma in argument lists.
+  StyleGuide: "#no-trailing-params-comma"
+  Enabled: true
+  EnforcedStyleForMultiline: no_comma
+  SupportedStylesForMultiline:
+  - comma
+  - consistent_comma
+  - no_comma
+
+# Supports --auto-correct
+Style/TrailingCommaInLiteral:
+  Description: Checks for trailing comma in array and hash literals.
+  StyleGuide: "#no-trailing-array-commas"
+  Enabled: true
+  EnforcedStyleForMultiline: no_comma
+  SupportedStylesForMultiline:
+  - comma
+  - consistent_comma
+  - no_comma
+
+# Supports --auto-correct
+Style/TrailingUnderscoreVariable:
+  Description: Checks for the usage of unneeded trailing underscores at the end of parallel
+    variable assignment.
+  AllowNamedUnderscoreVariables: true
+  Enabled: true
+
+# Supports --auto-correct
+Style/TrivialAccessors:
+  Description: Prefer attr_* methods to trivial readers/writers.
+  StyleGuide: "#attr_family"
+  Enabled: true
+  ExactNameMatch: true
+  AllowPredicates: true
+  AllowDSLWriters: false
+  IgnoreClassMethods: false
+  Whitelist:
+  - to_ary
+  - to_a
+  - to_c
+  - to_enum
+  - to_h
+  - to_hash
+  - to_i
+  - to_int
+  - to_io
+  - to_open
+  - to_path
+  - to_proc
+  - to_r
+  - to_regexp
+  - to_str
+  - to_s
+  - to_sym
+
+# Supports --auto-correct
+Style/UnlessElse:
+  Description: Do not use unless with else. Rewrite these with the positive case first.
+  StyleGuide: "#no-else-with-unless"
+  Enabled: true
+
+# Supports --auto-correct
+Style/UnneededCapitalW:
+  Description: Checks for %W when interpolation is not needed.
+  Enabled: true
+
+# Supports --auto-correct
+Style/UnneededInterpolation:
+  Description: Checks for strings that are just an interpolated expression.
+  Enabled: true
+
+# Supports --auto-correct
+Style/UnneededPercentQ:
+  Description: Checks for %q/%Q when single quotes or double quotes would do.
+  StyleGuide: "#percent-q"
+  Enabled: true
+
+# Supports --auto-correct
+Style/VariableInterpolation:
+  Description: Don't interpolate global, instance and class variables directly in strings.
+  StyleGuide: "#curlies-interpolate"
+  Enabled: true
+
+Style/VariableName:
+  Description: Use the configured style when naming variables.
+  StyleGuide: "#snake-case-symbols-methods-vars"
+  Enabled: true
+  EnforcedStyle: snake_case
+  SupportedStyles:
+  - snake_case
+  - camelCase
+
+Style/VariableNumber:
+  Description: Use the configured style when numbering variables.
+  Enabled: true
+  EnforcedStyle: normalcase
+  SupportedStyles:
+  - snake_case
+  - normalcase
+  - non_integer
+
+# Supports --auto-correct
+Style/WhenThen:
+  Description: Use when x then ... for one-line cases.
+  StyleGuide: "#one-line-cases"
+  Enabled: true
+
+# Supports --auto-correct
+Style/WhileUntilDo:
+  Description: Checks for redundant do after while or until.
+  StyleGuide: "#no-multiline-while-do"
+  Enabled: true
+
+# Supports --auto-correct
+Style/WhileUntilModifier:
+  Description: Favor modifier while/until usage when you have a single-line body.
+  StyleGuide: "#while-as-a-modifier"
+  Enabled: true
+  MaxLineLength: 80
+
+# Supports --auto-correct
+Style/WordArray:
+  Description: Use %w or %W for arrays of words.
+  StyleGuide: "#percent-w"
+  Enabled: true
+  EnforcedStyle: percent
+  SupportedStyles:
+  - percent
+  - brackets
+  MinSize: 0
+  WordRegex: !ruby/regexp /\A[\p{Word}\n\t]+\z/
+
+# Supports --auto-correct
+Style/YodaCondition:
+  Description: Do not use literals as the first operand of a comparison.
+  Reference: https://en.wikipedia.org/wiki/Yoda_conditions
+  Enabled: true
+
+# Supports --auto-correct
+Style/ZeroLengthPredicate:
+  Description: 'Use #empty? when testing for objects of length 0.'
+  Enabled: true

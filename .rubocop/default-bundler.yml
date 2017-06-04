@@ -1,0 +1,16 @@
+# Department 'Bundler' (2):
+Bundler/DuplicatedGem:
+  Description: Checks for duplicate gem entries in Gemfile.
+  Enabled: true
+  Include:
+  - "**/Gemfile"
+  - "**/gems.rb"
+
+# Supports --auto-correct
+Bundler/OrderedGems:
+  Description: Gems within groups in the Gemfile should be alphabetically sorted.
+  Enabled: true
+  Include:
+  - "**/Gemfile"
+  - "**/gems.rb"
+  TreatCommentsAsGroupSeparators: true

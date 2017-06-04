@@ -1,0 +1,155 @@
+require: 'rubocop-rspec'
+inherit_from:
+  - '.rubocop/default-bundler.yml'
+  - '.rubocop/default-layout.yml'
+  - '.rubocop/default-lint.yml'
+  - '.rubocop/default-metrics.yml'
+  - '.rubocop/default-performance.yml'
+  - '.rubocop/default-rails.yml'
+  - '.rubocop/default-rspec.yml'
+  - '.rubocop/default-security.yml'
+  - '.rubocop/default-style.yml'
+
+AllCops:
+  TargetRubyVersion: 2.4
+  DefaultFormatter: simple
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  Exclude:
+    - 'spec/spec_helper.rb'
+    - 'spec/rails_helper.rb'
+    - 'spec/dummy/**/*'
+    - 'vendor/**/*'
+    - 'bin/*'
+    - 'config/**/*'
+    - '*.gemspec'
+Rails:
+  Enabled: true
+
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Layout/SpaceBeforeSemicolon:
+  Enabled: false
+
+Layout/SpaceAroundEqualsInParameterDefault:
+  EnforcedStyle: no_space
+
+Layout/SpaceInsideBlockBraces:
+  EnforcedStyle: space
+  SpaceBeforeBlockParameters: false
+
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*_spec.rb'
+
+Metrics/LineLength:
+  Enabled: false
+
+Rails/ActionFilter:
+  Enabled: true
+
+Rails/ActiveSupportAliases:
+  Enabled: true
+
+Rails/Date:
+  Enabled: true
+
+Rails/DynamicFindBy:
+  Enabled: true
+
+Rails/EnumUniqueness:
+  Enabled: true
+
+Rails/Exit:
+  Enabled: true
+
+Rails/FilePath:
+  Enabled: true
+
+Rails/FindBy:
+  Enabled: true
+
+Rails/FindEach:
+  Enabled: true
+
+Rails/HasAndBelongsToMany:
+  Enabled: true
+
+Rails/Output:
+  Enabled: true
+
+Rails/PluralizationGrammar:
+  Enabled: true
+
+Rails/ReadWriteAttribute:
+  Enabled: true
+
+Rails/RelativeDateConstant:
+  Enabled: true
+
+Rails/RequestReferer:
+  Enabled: true
+  EnforcedStyle: referrer
+
+Rails/SafeNavigation:
+  Enabled: true
+
+Rails/SaveBang:
+  Enabled: true
+
+Rails/ScopeArgs:
+  Enabled: true
+
+Rails/SkipsModelValidations:
+  Enabled: true
+
+Rails/TimeZone:
+  Enabled: true
+  EnforcedStyle: flexible
+
+Rails/UniqBeforePluck:
+  Enabled: true
+  EnforcedStyle: conservative
+
+Rails/Validation:
+  Enabled: true
+
+Style/AutoResourceCleanup:
+  Enabled: true
+
+Style/CharacterLiteral:
+  Enabled: false
+
+Style/CollectionMethods:
+  Enabled: true
+  PreferredMethods:
+    collect: map
+    collect!: map!
+    reduce: inject
+    detect: find
+    find_all: select
+
+Style/Documentation:
+  Enabled: false
+
+Style/FormatString:
+  EnforcedStyle: percent
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/PercentLiteralDelimiters:
+  Enabled: false
+
+Style/RegexpLiteral:
+  Enabled: false
+
+Style/Send:
+  Enabled: true
+
+Style/SpecialGlobalVars:
+  Enabled: false

@@ -1,0 +1,71 @@
+# Department 'Metrics' (10):
+Metrics/AbcSize:
+  Description: A calculated magnitude based on number of assignments, branches, and
+    conditions.
+  Reference: http://c2.com/cgi/wiki?AbcMetric
+  Enabled: true
+  Max: 15
+
+Metrics/BlockLength:
+  Description: Avoid long blocks with many lines.
+  Enabled: true
+  CountComments: false
+  Max: 25
+  ExcludedMethods: []
+
+Metrics/BlockNesting:
+  Description: Avoid excessive block nesting
+  StyleGuide: "#three-is-the-number-thou-shalt-count"
+  Enabled: true
+  CountBlocks: false
+  Max: 3
+
+Metrics/ClassLength:
+  Description: Avoid classes longer than 100 lines of code.
+  Enabled: true
+  CountComments: false
+  Max: 100
+
+Metrics/CyclomaticComplexity:
+  Description: A complexity metric that is strongly correlated to the number of test
+    cases needed to validate a method.
+  Enabled: true
+  Max: 6
+
+Metrics/LineLength:
+  Description: Limit lines to 80 characters.
+  StyleGuide: "#80-character-limits"
+  Enabled: true
+  Max: 80
+  AllowHeredoc: true
+  AllowURI: true
+  URISchemes:
+  - http
+  - https
+  IgnoreCopDirectives: false
+  IgnoredPatterns: []
+
+Metrics/MethodLength:
+  Description: Avoid methods longer than 10 lines of code.
+  StyleGuide: "#short-methods"
+  Enabled: true
+  CountComments: false
+  Max: 10
+
+Metrics/ModuleLength:
+  Description: Avoid modules longer than 100 lines of code.
+  Enabled: true
+  CountComments: false
+  Max: 100
+
+Metrics/ParameterLists:
+  Description: Avoid parameter lists longer than three or four parameters.
+  StyleGuide: "#too-many-params"
+  Enabled: true
+  Max: 5
+  CountKeywordArgs: true
+
+Metrics/PerceivedComplexity:
+  Description: A complexity metric geared towards measuring complexity for a human reader.
+  Enabled: true
+  Max: 7

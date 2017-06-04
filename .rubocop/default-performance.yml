@@ -1,0 +1,151 @@
+# Department 'Performance' (24):
+Performance/Caller:
+  Description: Use `caller(n..n)` instead of `caller`.
+  Enabled: true
+
+# Supports --auto-correct
+Performance/CaseWhenSplat:
+  Description: Place `when` conditions that use splat at the end of the list of `when`
+    branches.
+  Enabled: true
+
+# Supports --auto-correct
+Performance/Casecmp:
+  Description: Use `casecmp` rather than `downcase ==`, `upcase ==`, `== downcase`,
+    or `== upcase`..
+  Reference: https://github.com/JuanitoFatas/fast-ruby#stringcasecmp-vs-stringdowncase---code
+  Enabled: true
+
+# Supports --auto-correct
+Performance/CompareWithBlock:
+  Description: Use `sort_by(&:foo)` instead of `sort_by { |a, b| a.foo <=> b.foo }`.
+  Enabled: true
+
+# Supports --auto-correct
+Performance/Count:
+  Description: Use `count` instead of `select...size`, `reject...size`, `select...count`,
+    `reject...count`, `select...length`, and `reject...length`.
+  SafeMode: true
+  Enabled: true
+
+# Supports --auto-correct
+Performance/Detect:
+  Description: Use `detect` instead of `select.first`, `find_all.first`, `select.last`,
+    and `find_all.last`.
+  Reference: https://github.com/JuanitoFatas/fast-ruby#enumerabledetect-vs-enumerableselectfirst-code
+  SafeMode: true
+  Enabled: true
+
+# Supports --auto-correct
+Performance/DoubleStartEndWith:
+  Description: Use `str.{start,end}_with?(x, ..., y, ...)` instead of `str.{start,end}_with?(x,
+    ...) || str.{start,end}_with?(y, ...)`.
+  Enabled: true
+  IncludeActiveSupportAliases: false
+
+# Supports --auto-correct
+Performance/EndWith:
+  Description: Use `end_with?` instead of a regex match anchored to the end of a string.
+  Reference: https://github.com/JuanitoFatas/fast-ruby#stringmatch-vs-stringstart_withstringend_with-code-start-code-end
+  AutoCorrect: false
+  Enabled: true
+
+Performance/FixedSize:
+  Description: Do not compute the size of statically sized objects except in constants
+  Enabled: true
+
+# Supports --auto-correct
+Performance/FlatMap:
+  Description: Use `Enumerable#flat_map` instead of `Enumerable#map...Array#flatten(1)`
+    or `Enumberable#collect..Array#flatten(1)`
+  Reference: https://github.com/JuanitoFatas/fast-ruby#enumerablemaparrayflatten-vs-enumerableflat_map-code
+  Enabled: true
+  EnabledForFlattenWithoutParams: false
+
+# Supports --auto-correct
+Performance/HashEachMethods:
+  Description: Use `Hash#each_key` and `Hash#each_value` instead of `Hash#keys.each`
+    and `Hash#values.each`.
+  StyleGuide: "#hash-each"
+  Enabled: true
+  AutoCorrect: false
+
+# Supports --auto-correct
+Performance/LstripRstrip:
+  Description: Use `strip` instead of `lstrip.rstrip`.
+  Enabled: true
+
+# Supports --auto-correct
+Performance/RangeInclude:
+  Description: Use `Range#cover?` instead of `Range#include?`.
+  Reference: https://github.com/JuanitoFatas/fast-ruby#cover-vs-include-code
+  Enabled: true
+
+# Supports --auto-correct
+Performance/RedundantBlockCall:
+  Description: Use `yield` instead of `block.call`.
+  Reference: https://github.com/JuanitoFatas/fast-ruby#proccall-vs-yield-code
+  Enabled: true
+
+# Supports --auto-correct
+Performance/RedundantMatch:
+  Description: Use `=~` instead of `String#match` or `Regexp#match` in a context where
+    the returned `MatchData` is not needed.
+  Enabled: true
+
+# Supports --auto-correct
+Performance/RedundantMerge:
+  Description: Use Hash#[]=, rather than Hash#merge! with a single key-value pair.
+  Reference: https://github.com/JuanitoFatas/fast-ruby#hashmerge-vs-hash-code
+  Enabled: true
+  MaxKeyValuePairs: 2
+
+# Supports --auto-correct
+Performance/RedundantSortBy:
+  Description: Use `sort` instead of `sort_by { |x| x }`.
+  Enabled: true
+
+# Supports --auto-correct
+Performance/RegexpMatch:
+  Description: Use `match?` instead of `Regexp#match`, `String#match`, `Symbol#match`,
+    `Regexp#===`, or `=~` when `MatchData` is not used.
+  Enabled: true
+
+# Supports --auto-correct
+Performance/ReverseEach:
+  Description: Use `reverse_each` instead of `reverse.each`.
+  Reference: https://github.com/JuanitoFatas/fast-ruby#enumerablereverseeach-vs-enumerablereverse_each-code
+  Enabled: true
+
+# Supports --auto-correct
+Performance/Sample:
+  Description: Use `sample` instead of `shuffle.first`, `shuffle.last`, and `shuffle[Integer]`.
+  Reference: https://github.com/JuanitoFatas/fast-ruby#arrayshufflefirst-vs-arraysample-code
+  Enabled: true
+
+# Supports --auto-correct
+Performance/Size:
+  Description: Use `size` instead of `count` for counting the number of elements in
+    `Array` and `Hash`.
+  Reference: https://github.com/JuanitoFatas/fast-ruby#arraycount-vs-arraysize-code
+  Enabled: true
+
+# Supports --auto-correct
+Performance/StartWith:
+  Description: Use `start_with?` instead of a regex match anchored to the beginning
+    of a string.
+  Reference: https://github.com/JuanitoFatas/fast-ruby#stringmatch-vs-stringstart_withstringend_with-code-start-code-end
+  AutoCorrect: false
+  Enabled: true
+
+# Supports --auto-correct
+Performance/StringReplacement:
+  Description: Use `tr` instead of `gsub` when you are replacing the same number of
+    characters. Use `delete` instead of `gsub` when you are deleting characters.
+  Reference: https://github.com/JuanitoFatas/fast-ruby#stringgsub-vs-stringtr-code
+  Enabled: true
+
+# Supports --auto-correct
+Performance/TimesMap:
+  Description: Checks for .times.map calls.
+  Enabled: true

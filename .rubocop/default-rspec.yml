@@ -1,0 +1,139 @@
+# Department 'RSpec' (42):
+RSpec/AnyInstance:
+  Enabled: true
+
+RSpec/AroundBlock:
+  Enabled: true
+
+# Supports --auto-correct
+RSpec/BeEql:
+  Enabled: true
+
+RSpec/BeforeAfterAll:
+  Enabled: true
+
+RSpec/DescribeClass:
+  Enabled: true
+
+RSpec/DescribeMethod:
+  Enabled: true
+
+RSpec/DescribeSymbol:
+  Enabled: true
+
+# Supports --auto-correct
+RSpec/DescribedClass:
+  Enabled: true
+
+RSpec/EmptyExampleGroup:
+  Enabled: true
+
+# Supports --auto-correct
+RSpec/EmptyLineAfterFinalLet:
+  Enabled: true
+
+# Supports --auto-correct
+RSpec/EmptyLineAfterSubject:
+  Enabled: true
+
+RSpec/ExampleLength:
+  Enabled: true
+
+# Supports --auto-correct
+RSpec/ExampleWording:
+  Enabled: true
+
+RSpec/ExpectActual:
+  Enabled: true
+
+RSpec/ExpectOutput:
+  Enabled: true
+
+RSpec/FilePath:
+  Enabled: true
+
+RSpec/Focus:
+  Enabled: true
+
+# Supports --auto-correct
+RSpec/HookArgument:
+  Enabled: true
+
+# Supports --auto-correct
+RSpec/ImplicitExpect:
+  Enabled: true
+
+# Supports --auto-correct
+RSpec/InstanceSpy:
+  Enabled: true
+
+RSpec/InstanceVariable:
+  Enabled: true
+
+# Supports --auto-correct
+RSpec/ItBehavesLike:
+  Enabled: true
+
+RSpec/IteratedExpectation:
+  Enabled: true
+
+# Supports --auto-correct
+RSpec/LeadingSubject:
+  Enabled: true
+
+RSpec/LetSetup:
+  Enabled: true
+
+RSpec/MessageChain:
+  Enabled: true
+
+RSpec/MessageExpectation:
+  Enabled: true
+
+RSpec/MessageSpies:
+  Enabled: true
+
+RSpec/MultipleDescribes:
+  Enabled: true
+
+RSpec/MultipleExpectations:
+  Enabled: true
+
+RSpec/NamedSubject:
+  Enabled: true
+
+RSpec/NestedGroups:
+  Enabled: true
+
+# Supports --auto-correct
+RSpec/NotToNot:
+  Enabled: true
+
+RSpec/OverwritingSetup:
+  Enabled: true
+
+RSpec/RepeatedDescription:
+  Enabled: true
+
+RSpec/RepeatedExample:
+  Enabled: true
+
+RSpec/ScatteredLet:
+  Enabled: true
+
+RSpec/ScatteredSetup:
+  Enabled: true
+
+# Supports --auto-correct
+RSpec/SharedContext:
+  Enabled: true
+
+# Supports --auto-correct
+RSpec/SingleArgumentMessageChain:
+  Enabled: true
+
+RSpec/SubjectStub:
+  Enabled: true
+
+RSpec/VerifiedDoubles:
+  Enabled: true
