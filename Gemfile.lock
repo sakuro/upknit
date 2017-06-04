@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    upknit (0.9.0)
+    upknit (0.9.1)
       rails (~> 5.1.1)
 
 GEM
