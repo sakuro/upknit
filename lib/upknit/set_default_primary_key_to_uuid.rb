@@ -26,4 +26,3 @@ module Upknit
 end
 
 Upknit::Engine.include Upknit::SetDefaultPrimaryKeyToUuid
-
