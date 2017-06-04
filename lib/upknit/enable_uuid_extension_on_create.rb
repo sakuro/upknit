@@ -1,0 +1,1 @@
+require 'upknit/enable_uuid_extension_on_create/postgresql'
