@@ -9,9 +9,12 @@ Gem::Specification.new do |s|
   s.version     = Upknit::VERSION
   s.authors     = ["OZAWA Sakuro"]
   s.email       = ["sakuro@2238club.org"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Upknit."
-  s.description = "TODO: Description of Upknit."
+  s.homepage    = "https://github.com/upknit"
+  s.summary     = "UUID primary key enabler for rails."
+  s.description = <<~EOS
+  This rails engine configures necessary settings to enable native UUID primary key
+  in rails + postgresql environment.
+  EOS
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
