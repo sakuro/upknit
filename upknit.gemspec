@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Upknit::VERSION
   s.authors     = ["OZAWA Sakuro"]
   s.email       = ["sakuro@2238club.org"]
-  s.homepage    = "https://github.com/upknit"
+  s.homepage    = "https://github.com/sakuro/upknit"
   s.summary     = "UUID primary key enabler for rails."
   s.description = <<~EOS
   This rails engine configures necessary settings to enable native UUID primary key
