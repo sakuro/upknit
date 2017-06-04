@@ -16,7 +16,7 @@ RSpec.describe Upknit::Engine do
       end
     end
 
-    let(:migration_file) { Dir[File.join(__dir__, 'dummy/db/migrate/*_create_books.rb')].first }
+    let(:migration_file) { Dir[File.join(__dir__, '../dummy/db/migrate/*_create_books.rb')].first }
 
     it 'sets default primary key to UUID' do
       expect(File.read(migration_file)).to match(/create_table :books, id: :uuid/)
