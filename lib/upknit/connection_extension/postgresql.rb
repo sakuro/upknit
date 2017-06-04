@@ -25,7 +25,7 @@ module Upknit
       # UUID support extensions in desired order
       # Note: Use of uuid-ossp for random UUID(v4) is discouraged
       # https://www.postgresql.org/docs/9.6/static/uuid-ossp.html
-      UUID_EXTENSIONS = %w(pgcrypto uuid-ossp)
+      UUID_EXTENSIONS = %w(pgcrypto uuid-ossp).freeze
       private_constant :UUID_EXTENSIONS
 
       def available_extensions
