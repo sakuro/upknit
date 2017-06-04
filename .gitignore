@@ -8,3 +8,4 @@ spec/dummy/tmp/
 .yardoc
 doc/
 vendor/bundle/
+Gemfile.lock
