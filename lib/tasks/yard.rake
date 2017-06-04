@@ -3,6 +3,6 @@ begin
   require 'yard/rake/yardoc_task'
 
   YARD::Rake::YardocTask.new
-rescue LoadError
+rescue LoadError # rubocop:disable Lint/HandleExceptions
   # skip yard tasks
 end
