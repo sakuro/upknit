@@ -1,28 +1,27 @@
 # Upknit
-Short description and motivation.
+
+Adding this gem to a Rails application with PostgreSQL automatically enables UUID primary key.
 
 ## Usage
-How to use my plugin.
+
+Add this gem to your Rails application.
 
 ## Installation
+
 Add this line to your application's Gemfile:
 
-```ruby
-gem 'upknit'
-```
+    gem 'upknit'
 
 And then execute:
-```bash
-$ bundle
-```
 
-Or install it yourself as:
-```bash
-$ gem install upknit
-```
+    $ bundle
 
-## Contributing
-Contribution directions go here.
+## Internals
+
+This gem does two things to enable UUID primary key.
+
+1. Enable PostgreSQL's extension for calculation of UUID(v4).
+2. Configure generators to use UUID as primary key for newly generated tables.
 
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
