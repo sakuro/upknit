@@ -52,6 +52,7 @@ GEM
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     i18n (0.8.4)
+    kramdown (1.13.2)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.5)
@@ -124,14 +125,17 @@ GEM
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
+    yard (0.9.9)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  kramdown
   pg
   rspec-rails
   upknit!
+  yard
 
 BUNDLED WITH
    1.15.1
