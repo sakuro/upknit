@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 5.1"
 
-  s.add_development_dependency "pg"
+  s.add_development_dependency "pg", '~> 0.18'
   s.add_development_dependency "rspec-rails"
   s.add_development_dependency "yard"
   s.add_development_dependency "kramdown"
