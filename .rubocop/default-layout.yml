@@ -1,4 +1,4 @@
-# Department 'Layout' (70):
+# Department 'Layout' (73):
 # Supports --auto-correct
 Layout/AccessModifierIndentation:
   Description: Check indentation of private/protected visibility modifiers.
@@ -66,6 +66,25 @@ Layout/CaseIndentation:
   IndentationWidth:
 
 # Supports --auto-correct
+Layout/ClassStructure:
+  Description: Enforces a configured order of definitions within a class body.
+  StyleGuide: https://github.com/bbatsov/ruby-style-guide#consistent-classes
+  Enabled: false
+  Categories:
+    module_inclusion:
+    - include
+    - prepend
+    - extend
+  ExpectedOrder:
+  - module_inclusion
+  - constants
+  - public_class_methods
+  - initializer
+  - public_methods
+  - protected_methods
+  - private_methods
+
+# Supports --auto-correct
 Layout/ClosingParenthesisIndentation:
   Description: Checks the indentation of hanging closing parentheses.
   Enabled: true
@@ -114,6 +133,11 @@ Layout/EmptyLines:
 Layout/EmptyLinesAroundAccessModifier:
   Description: Keep blank lines around access modifiers.
   StyleGuide: "#empty-lines-around-access-modifier"
+  Enabled: true
+
+# Supports --auto-correct
+Layout/EmptyLinesAroundArguments:
+  Description: Keeps track of empty lines around method arguments.
   Enabled: true
 
 # Supports --auto-correct
@@ -453,6 +477,10 @@ Layout/SpaceBeforeBlockBraces:
   SupportedStyles:
   - space
   - no_space
+  EnforcedStyleForEmptyBraces: space
+  SupportedStylesForEmptyBraces:
+  - space
+  - no_space
 
 # Supports --auto-correct
 Layout/SpaceBeforeComma:
@@ -486,6 +514,20 @@ Layout/SpaceInLambdaLiteral:
   - require_space
 
 # Supports --auto-correct
+Layout/SpaceInsideArrayLiteralBrackets:
+  Description: Checks the spacing inside array literal brackets.
+  Enabled: true
+  EnforcedStyle: no_space
+  SupportedStyles:
+  - space
+  - no_space
+  - compact
+  EnforcedStyleForEmptyBrackets: no_space
+  SupportedStylesForEmptyBrackets:
+  - space
+  - no_space
+
+# Supports --auto-correct
 Layout/SpaceInsideArrayPercentLiteral:
   Description: No unnecessary additional spaces between elements in %i/%w literals.
   Enabled: true
@@ -506,12 +548,6 @@ Layout/SpaceInsideBlockBraces:
   SpaceBeforeBlockParameters: true
 
 # Supports --auto-correct
-Layout/SpaceInsideBrackets:
-  Description: No spaces after [ or before ].
-  StyleGuide: "#no-spaces-braces"
-  Enabled: true
-
-# Supports --auto-correct
 Layout/SpaceInsideHashLiteralBraces:
   Description: Use spaces inside hash literal braces - or don't.
   StyleGuide: "#spaces-operators"
@@ -529,7 +565,7 @@ Layout/SpaceInsideHashLiteralBraces:
 # Supports --auto-correct
 Layout/SpaceInsideParens:
   Description: No spaces after ( or before ).
-  StyleGuide: "#no-spaces-braces"
+  StyleGuide: "#spaces-braces"
   Enabled: true
 
 # Supports --auto-correct
@@ -542,6 +578,15 @@ Layout/SpaceInsideRangeLiteral:
   Description: No spaces inside range literals.
   StyleGuide: "#no-space-inside-range-literals"
   Enabled: true
+
+# Supports --auto-correct
+Layout/SpaceInsideReferenceBrackets:
+  Description: Checks the spacing inside referential brackets.
+  Enabled: true
+  EnforcedStyle: no_space
+  SupportedStyles:
+  - space
+  - no_space
 
 # Supports --auto-correct
 Layout/SpaceInsideStringInterpolation:
@@ -558,6 +603,7 @@ Layout/Tab:
   Description: No hard tabs.
   StyleGuide: "#spaces-indentation"
   Enabled: true
+  IndentationWidth:
 
 # Supports --auto-correct
 Layout/TrailingBlankLines:

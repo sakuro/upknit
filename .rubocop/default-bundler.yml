@@ -1,6 +1,16 @@
-# Department 'Bundler' (2):
+# Department 'Bundler' (3):
 Bundler/DuplicatedGem:
   Description: Checks for duplicate gem entries in Gemfile.
+  Enabled: true
+  Include:
+  - "**/Gemfile"
+  - "**/gems.rb"
+
+# Supports --auto-correct
+Bundler/InsecureProtocolSource:
+  Description: The source `:gemcutter`, `:rubygems` and `:rubyforge` are deprecated
+    because HTTP requests are insecure. Please change your source to 'https://rubygems.org'
+    if possible, or 'http://rubygems.org' if not.
   Enabled: true
   Include:
   - "**/Gemfile"

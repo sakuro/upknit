@@ -1,0 +1,7 @@
+# Department 'Capybara' (2):
+Capybara/CurrentPathExpectation:
+  Enabled: true
+
+# Supports --auto-correct
+Capybara/FeatureMethods:
+  Enabled: true

@@ -1,4 +1,12 @@
-# Department 'RSpec' (42):
+# Department 'RSpec' (54):
+# Supports --auto-correct
+RSpec/AlignLeftLetBrace:
+  Enabled: true
+
+# Supports --auto-correct
+RSpec/AlignRightLetBrace:
+  Enabled: true
+
 RSpec/AnyInstance:
   Enabled: true
 
@@ -10,6 +18,9 @@ RSpec/BeEql:
   Enabled: true
 
 RSpec/BeforeAfterAll:
+  Enabled: true
+
+RSpec/ContextWording:
   Enabled: true
 
 RSpec/DescribeClass:
@@ -39,11 +50,21 @@ RSpec/EmptyLineAfterSubject:
 RSpec/ExampleLength:
   Enabled: true
 
+RSpec/ExampleWithoutDescription:
+  Enabled: true
+
 # Supports --auto-correct
 RSpec/ExampleWording:
   Enabled: true
 
 RSpec/ExpectActual:
+  Enabled: true
+
+# Supports --auto-correct
+RSpec/ExpectChange:
+  Enabled: true
+
+RSpec/ExpectInHook:
   Enabled: true
 
 RSpec/ExpectOutput:
@@ -70,6 +91,9 @@ RSpec/InstanceSpy:
 RSpec/InstanceVariable:
   Enabled: true
 
+RSpec/InvalidPredicateMatcher:
+  Enabled: true
+
 # Supports --auto-correct
 RSpec/ItBehavesLike:
   Enabled: true
@@ -79,6 +103,10 @@ RSpec/IteratedExpectation:
 
 # Supports --auto-correct
 RSpec/LeadingSubject:
+  Enabled: true
+
+# Supports --auto-correct
+RSpec/LetBeforeExamples:
   Enabled: true
 
 RSpec/LetSetup:
@@ -99,6 +127,10 @@ RSpec/MultipleDescribes:
 RSpec/MultipleExpectations:
   Enabled: true
 
+# Supports --auto-correct
+RSpec/MultipleSubjects:
+  Enabled: true
+
 RSpec/NamedSubject:
   Enabled: true
 
@@ -112,10 +144,18 @@ RSpec/NotToNot:
 RSpec/OverwritingSetup:
   Enabled: true
 
+# Supports --auto-correct
+RSpec/PredicateMatcher:
+  Enabled: true
+
 RSpec/RepeatedDescription:
   Enabled: true
 
 RSpec/RepeatedExample:
+  Enabled: true
+
+# Supports --auto-correct
+RSpec/ReturnFromStub:
   Enabled: true
 
 RSpec/ScatteredLet:
@@ -136,4 +176,7 @@ RSpec/SubjectStub:
   Enabled: true
 
 RSpec/VerifiedDoubles:
+  Enabled: true
+
+RSpec/VoidExpect:
   Enabled: true

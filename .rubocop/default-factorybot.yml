@@ -1,0 +1,4 @@
+# Department 'FactoryBot' (1):
+# Supports --auto-correct
+FactoryBot/DynamicAttributeDefinedStatically:
+  Enabled: true

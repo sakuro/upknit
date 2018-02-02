@@ -1,4 +1,4 @@
-# Department 'Rails' (32):
+# Department 'Rails' (40):
 # Supports --auto-correct
 Rails/ActionFilter:
   Description: Enforces consistent use of action filter methods.
@@ -34,6 +34,13 @@ Rails/Blank:
   NotPresent: true
   UnlessPresent: true
 
+Rails/CreateTableWithTimestamps:
+  Description: Checks the migration for which timestamps are not included when creating
+    a new table.
+  Enabled: false
+  Include:
+  - db/migrate/*.rb
+
 Rails/Date:
   Description: Checks the correct usage of date aware methods, such as Date.today, Date.current
     etc.
@@ -47,6 +54,7 @@ Rails/Date:
 Rails/Delegate:
   Description: Prefer delegate method for delegations.
   Enabled: false
+  EnforceForPrefixed: true
 
 # Supports --auto-correct
 Rails/DelegateAllowBlank:
@@ -66,6 +74,11 @@ Rails/EnumUniqueness:
   Enabled: false
   Include:
   - app/models/**/*.rb
+
+# Supports --auto-correct
+Rails/EnvironmentComparison:
+  Description: Favor `Rails.env.production?` over `Rails.env == 'production'`
+  Enabled: false
 
 Rails/Exit:
   Description: Favor `fail`, `break`, `return`, etc. over `exit` in application or library
@@ -105,6 +118,13 @@ Rails/HasAndBelongsToMany:
   Include:
   - app/models/**/*.rb
 
+Rails/HasManyOrHasOneDependent:
+  Description: Define the dependent option to the has_many and has_one associations.
+  StyleGuide: https://github.com/bbatsov/rails-style-guide#has_many-has_one-dependent-option
+  Enabled: false
+  Include:
+  - app/models/**/*.rb
+
 # Supports --auto-correct
 Rails/HttpPositionalArguments:
   Description: Use keyword arguments instead of positional arguments in http method
@@ -113,6 +133,20 @@ Rails/HttpPositionalArguments:
   Include:
   - spec/**/*
   - test/**/*
+
+Rails/InverseOf:
+  Description: Checks for associations where the inverse cannot be determined automatically.
+  Enabled: false
+  Include:
+  - app/models/**/*.rb
+
+Rails/LexicallyScopedActionFilter:
+  Description: Checks that methods specified in the filter's `only` or `except` options
+    are explicitly defined in the controller.
+  StyleGuide: https://github.com/bbatsov/rails-style-guide#lexically-scoped-action-filter
+  Enabled: false
+  Include:
+  - app/controllers/**/*.rb
 
 Rails/NotNullColumn:
   Description: Do not add a NOT NULL column without a default value
@@ -139,6 +173,12 @@ Rails/PluralizationGrammar:
   Enabled: false
 
 # Supports --auto-correct
+Rails/Presence:
+  Description: Checks code that can be written more easily using `Object#presence` defined
+    by Active Support.
+  Enabled: false
+
+# Supports --auto-correct
 Rails/Present:
   Description: Enforce using `blank?` and `present?`.
   Enabled: false
@@ -153,6 +193,11 @@ Rails/ReadWriteAttribute:
   Enabled: false
   Include:
   - app/models/**/*.rb
+
+# Supports --auto-correct
+Rails/RedundantReceiverInWithOptions:
+  Description: Checks for redundant receiver in `with_options`.
+  Enabled: false
 
 # Supports --auto-correct
 Rails/RelativeDateConstant:
@@ -232,6 +277,14 @@ Rails/UniqBeforePluck:
   - conservative
   - aggressive
   AutoCorrect: false
+
+Rails/UnknownEnv:
+  Description: Use correct environment name.
+  Enabled: false
+  Environments:
+  - development
+  - test
+  - production
 
 # Supports --auto-correct
 Rails/Validation:

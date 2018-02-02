@@ -1,0 +1,139 @@
+# Department 'Naming' (12):
+Naming/AccessorMethodName:
+  Description: Check the naming of accessor methods for get_/set_.
+  StyleGuide: "#accessor_mutator_method_names"
+  Enabled: true
+
+Naming/AsciiIdentifiers:
+  Description: Use only ascii symbols in identifiers.
+  StyleGuide: "#english-identifiers"
+  Enabled: true
+
+Naming/BinaryOperatorParameterName:
+  Description: When defining binary operators, name the argument other.
+  StyleGuide: "#other-arg"
+  Enabled: true
+
+Naming/ClassAndModuleCamelCase:
+  Description: Use CamelCase for classes and modules.
+  StyleGuide: "#camelcase-classes"
+  Enabled: true
+
+Naming/ConstantName:
+  Description: Constants should use SCREAMING_SNAKE_CASE.
+  StyleGuide: "#screaming-snake-case"
+  Enabled: true
+
+Naming/FileName:
+  Description: Use snake_case for source file names.
+  StyleGuide: "#snake-case-files"
+  Enabled: true
+  Exclude: []
+  ExpectMatchingDefinition: false
+  Regex:
+  IgnoreExecutableScripts: true
+  AllowedAcronyms:
+  - CLI
+  - DSL
+  - ACL
+  - API
+  - ASCII
+  - CPU
+  - CSS
+  - DNS
+  - EOF
+  - GUID
+  - HTML
+  - HTTP
+  - HTTPS
+  - ID
+  - IP
+  - JSON
+  - LHS
+  - QPS
+  - RAM
+  - RHS
+  - RPC
+  - SLA
+  - SMTP
+  - SQL
+  - SSH
+  - TCP
+  - TLS
+  - TTL
+  - UDP
+  - UI
+  - UID
+  - UUID
+  - URI
+  - URL
+  - UTF8
+  - VM
+  - XML
+  - XMPP
+  - XSRF
+  - XSS
+
+Naming/HeredocDelimiterCase:
+  Description: Use configured case for heredoc delimiters.
+  StyleGuide: "#heredoc-delimiters"
+  Enabled: true
+  EnforcedStyle: uppercase
+  SupportedStyles:
+  - lowercase
+  - uppercase
+
+Naming/HeredocDelimiterNaming:
+  Description: Use descriptive heredoc delimiters.
+  StyleGuide: "#heredoc-delimiters"
+  Enabled: true
+  Blacklist:
+  - END
+  - !ruby/regexp /EO[A-Z]{1}/
+
+Naming/MethodName:
+  Description: Use the configured style when naming methods.
+  StyleGuide: "#snake-case-symbols-methods-vars"
+  Enabled: true
+  EnforcedStyle: snake_case
+  SupportedStyles:
+  - snake_case
+  - camelCase
+
+Naming/PredicateName:
+  Description: Check the names of predicate methods.
+  StyleGuide: "#bool-methods-qmark"
+  Enabled: true
+  NamePrefix:
+  - is_
+  - has_
+  - have_
+  NamePrefixBlacklist:
+  - is_
+  - has_
+  - have_
+  NameWhitelist:
+  - is_a?
+  MethodDefinitionMacros:
+  - define_method
+  - define_singleton_method
+  Exclude:
+  - spec/**/*
+
+Naming/VariableName:
+  Description: Use the configured style when naming variables.
+  StyleGuide: "#snake-case-symbols-methods-vars"
+  Enabled: true
+  EnforcedStyle: snake_case
+  SupportedStyles:
+  - snake_case
+  - camelCase
+
+Naming/VariableNumber:
+  Description: Use the configured style when numbering variables.
+  Enabled: true
+  EnforcedStyle: normalcase
+  SupportedStyles:
+  - snake_case
+  - normalcase
+  - non_integer

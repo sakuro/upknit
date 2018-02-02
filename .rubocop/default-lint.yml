@@ -1,4 +1,4 @@
-# Department 'Lint' (61):
+# Department 'Lint' (73):
 Lint/AmbiguousBlockAssociation:
   Description: Checks for ambiguous block association with method when param passed
     without parentheses.
@@ -31,6 +31,10 @@ Lint/BlockAlignment:
   - either
   - start_of_block
   - start_of_line
+
+Lint/BooleanSymbol:
+  Description: Check for `:true` and `:false` symbols.
+  Enabled: true
 
 Lint/CircularArgumentReference:
   Description: Default values in optional keyword arguments and optional ordinal arguments
@@ -152,11 +156,11 @@ Lint/InheritException:
   - runtime_error
   - standard_error
 
-Lint/InvalidCharacterLiteral:
-  Description: Checks for invalid character literals with a non-escaped whitespace character.
+Lint/InterpolationCheck:
+  Description: Raise warning for interpolation in single q strs
   Enabled: true
 
-Lint/LiteralInCondition:
+Lint/LiteralAsCondition:
   Description: Checks of literals used in conditions.
   Enabled: true
 
@@ -171,6 +175,11 @@ Lint/Loop:
   StyleGuide: "#loop-with-break"
   Enabled: true
 
+Lint/MissingCopEnableDirective:
+  Description: Checks for a `# rubocop:enable` after `# rubocop:disable`
+  Enabled: true
+  MaximumRangeSize: .inf
+
 # Supports --auto-correct
 Lint/MultipleCompare:
   Description: Use `&&` operator to compare multiple value.
@@ -179,6 +188,10 @@ Lint/MultipleCompare:
 Lint/NestedMethodDefinition:
   Description: Do not use nested method definitions.
   StyleGuide: "#no-nested-methods"
+  Enabled: true
+
+Lint/NestedPercentLiteral:
+  Description: Checks for nested percent literals.
   Enabled: true
 
 Lint/NextWithoutAccumulator:
@@ -210,6 +223,21 @@ Lint/RandOne:
     a mistake.
   Enabled: true
 
+# Supports --auto-correct
+Lint/RedundantWithIndex:
+  Description: Checks for redundant `with_index`.
+  Enabled: true
+
+# Supports --auto-correct
+Lint/RedundantWithObject:
+  Description: Checks for redundant `with_object`.
+  Enabled: true
+
+Lint/RegexpAsCondition:
+  Description: Do not use regexp literal as a condition. The regexp literal matches
+    `$_` implicitly.
+  Enabled: true
+
 Lint/RequireParentheses:
   Description: Use parentheses in the method call to avoid confusion about precedence.
   Enabled: true
@@ -224,6 +252,10 @@ Lint/RescueType:
   Description: Avoid rescuing from non constants that could result in a `TypeError`.
   Enabled: true
 
+Lint/ReturnInVoidContext:
+  Description: Checks for return in void context.
+  Enabled: true
+
 # Supports --auto-correct
 Lint/SafeNavigationChain:
   Description: Do not chain ordinary method call after safe navigation operator.
@@ -234,9 +266,15 @@ Lint/SafeNavigationChain:
   - presence
   - try
 
+# Supports --auto-correct
 Lint/ScriptPermission:
   Description: Grant script file execute permission.
   Enabled: true
+
+Lint/ShadowedArgument:
+  Description: Avoid reassigning arguments before they were used.
+  Enabled: true
+  IgnoreImplicitReferences: false
 
 Lint/ShadowedException:
   Description: Avoid rescuing a higher level exception before a lower level exception.
@@ -253,6 +291,10 @@ Lint/StringConversionInInterpolation:
   StyleGuide: "#no-to-s"
   Enabled: true
 
+Lint/Syntax:
+  Description: Checks syntax error
+  Enabled: true
+
 Lint/UnderscorePrefixedVariableName:
   Description: Do not use prefix `_` for a variable that is used.
   Enabled: true
@@ -266,6 +308,11 @@ Lint/UnifiedInteger:
 Lint/UnneededDisable:
   Description: 'Checks for rubocop:disable comments that can be removed. Note: this
     cop is not disabled when disabling all cops. It must be explicitly disabled.'
+  Enabled: true
+
+# Supports --auto-correct
+Lint/UnneededRequireStatement:
+  Description: Checks for unnecessary `require` statement.
   Enabled: true
 
 # Supports --auto-correct
@@ -292,6 +339,19 @@ Lint/UnusedMethodArgument:
   Enabled: true
   AllowUnusedKeywordArguments: false
   IgnoreEmptyMethods: true
+
+Lint/UriEscapeUnescape:
+  Description: "`URI.escape` method is obsolete and should not be used. Instead, use
+    `CGI.escape`, `URI.encode_www_form` or `URI.encode_www_form_component` depending
+    on your specific use case. Also `URI.unescape` method is obsolete and should not
+    be used. Instead, use `CGI.unescape`, `URI.decode_www_form` or `URI.decode_www_form_component`
+    depending on your specific use case."
+  Enabled: true
+
+# Supports --auto-correct
+Lint/UriRegexp:
+  Description: Use `URI::DEFAULT_PARSER.make_regexp` instead of `URI.regexp`.
+  Enabled: true
 
 Lint/UselessAccessModifier:
   Description: Checks for useless access modifiers.

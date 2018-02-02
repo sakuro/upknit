@@ -1,9 +1,4 @@
-# Department 'Style' (144):
-Style/AccessorMethodName:
-  Description: Check the naming of accessor methods for get_/set_.
-  StyleGuide: "#accessor_mutator_method_names"
-  Enabled: true
-
+# Department 'Style' (152):
 # Supports --auto-correct
 Style/Alias:
   Description: Use alias instead of alias_method.
@@ -34,11 +29,7 @@ Style/AsciiComments:
   Description: Use only ascii symbols in comments.
   StyleGuide: "#english-comments"
   Enabled: true
-
-Style/AsciiIdentifiers:
-  Description: Use only ascii symbols in identifiers.
-  StyleGuide: "#english-identifiers"
-  Enabled: true
+  AllowedChars: []
 
 # Supports --auto-correct
 Style/Attr:
@@ -125,13 +116,11 @@ Style/CharacterLiteral:
   StyleGuide: "#no-character-literals"
   Enabled: true
 
-Style/ClassAndModuleCamelCase:
-  Description: Use CamelCase for classes and modules.
-  StyleGuide: "#camelcase-classes"
-  Enabled: true
-
+# Supports --auto-correct
 Style/ClassAndModuleChildren:
   Description: Checks style of children classes and modules.
+  StyleGuide: "#namespace-definition"
+  AutoCorrect: false
   Enabled: true
   EnforcedStyle: nested
   SupportedStyles:
@@ -177,6 +166,12 @@ Style/ColonMethodCall:
   Enabled: true
 
 # Supports --auto-correct
+Style/ColonMethodDefinition:
+  Description: 'Do not use :: for defining class methods.'
+  StyleGuide: "#colon-method-definition"
+  Enabled: true
+
+# Supports --auto-correct
 Style/CommandLiteral:
   Description: Use `` or %x around command literals.
   StyleGuide: "#percent-x"
@@ -200,6 +195,10 @@ Style/CommentAnnotation:
   - HACK
   - REVIEW
 
+Style/CommentedKeyword:
+  Description: Do not place comments on the same line as certain keywords.
+  Enabled: true
+
 # Supports --auto-correct
 Style/ConditionalAssignment:
   Description: Use the return value of `if` and `case` statements for assignment to
@@ -213,11 +212,6 @@ Style/ConditionalAssignment:
   SingleLineConditionsOnly: true
   IncludeTernaryExpressions: true
 
-Style/ConstantName:
-  Description: Constants should use SCREAMING_SNAKE_CASE.
-  StyleGuide: "#screaming-snake-case"
-  Enabled: true
-
 # Supports --auto-correct
 Style/Copyright:
   Description: Include a copyright notice in each file before any code.
@@ -225,10 +219,21 @@ Style/Copyright:
   Notice: "^Copyright (\\(c\\) )?2[0-9]{3} .+"
   AutocorrectNotice: ''
 
+Style/DateTime:
+  Description: Use Date or Time over DateTime.
+  StyleGuide: "#date--time"
+  Enabled: true
+
 # Supports --auto-correct
 Style/DefWithParentheses:
   Description: Use def with parentheses when there are arguments.
   StyleGuide: "#method-parens"
+  Enabled: true
+
+# Supports --auto-correct
+Style/Dir:
+  Description: Use the `__dir__` method to retrieve the canonicalized absolute path
+    to the current file.
   Enabled: true
 
 Style/Documentation:
@@ -263,6 +268,11 @@ Style/EachWithObject:
   Enabled: true
 
 # Supports --auto-correct
+Style/EmptyBlockParameter:
+  Description: Omit pipes for empty block parameters.
+  Enabled: true
+
+# Supports --auto-correct
 Style/EmptyCaseCondition:
   Description: Avoid empty condition in case statements.
   Enabled: true
@@ -276,6 +286,11 @@ Style/EmptyElse:
   - empty
   - nil
   - both
+
+# Supports --auto-correct
+Style/EmptyLambdaParameter:
+  Description: Omit parens for empty lambda parameters.
+  Enabled: true
 
 # Supports --auto-correct
 Style/EmptyLiteral:
@@ -297,17 +312,16 @@ Style/EmptyMethod:
 Style/Encoding:
   Description: Use UTF-8 as the source file encoding.
   StyleGuide: "#utf-8"
-  Enabled: false
-  EnforcedStyle: never
-  SupportedStyles:
-  - when_needed
-  - always
-  - never
-  AutoCorrectEncodingComment: "# encoding: utf-8"
+  Enabled: true
 
 Style/EndBlock:
   Description: Avoid the use of END blocks.
   StyleGuide: "#no-END-blocks"
+  Enabled: true
+
+Style/EvalWithLocation:
+  Description: Pass `__FILE__` and `__LINE__` to `eval` method, as they are used by
+    backtraces.
   Enabled: true
 
 # Supports --auto-correct
@@ -315,56 +329,6 @@ Style/EvenOdd:
   Description: Favor the use of Integer#even? && Integer#odd?
   StyleGuide: "#predicate-methods"
   Enabled: true
-
-Style/FileName:
-  Description: Use snake_case for source file names.
-  StyleGuide: "#snake-case-files"
-  Enabled: true
-  Exclude: []
-  ExpectMatchingDefinition: false
-  Regex:
-  IgnoreExecutableScripts: true
-  AllowedAcronyms:
-  - CLI
-  - DSL
-  - ACL
-  - API
-  - ASCII
-  - CPU
-  - CSS
-  - DNS
-  - EOF
-  - GUID
-  - HTML
-  - HTTP
-  - HTTPS
-  - ID
-  - IP
-  - JSON
-  - LHS
-  - QPS
-  - RAM
-  - RHS
-  - RPC
-  - SLA
-  - SMTP
-  - SQL
-  - SSH
-  - TCP
-  - TLS
-  - TTL
-  - UDP
-  - UI
-  - UID
-  - UUID
-  - URI
-  - URL
-  - UTF8
-  - VM
-  - XML
-  - XMPP
-  - XSRF
-  - XSS
 
 Style/FlipFlop:
   Description: Checks for flip flops
@@ -398,6 +362,7 @@ Style/FormatStringToken:
   SupportedStyles:
   - annotated
   - template
+  - unannotated
 
 # Supports --auto-correct
 Style/FrozenStringLiteralComment:
@@ -452,7 +417,6 @@ Style/IfUnlessModifier:
   Description: Favor modifier if/unless usage when you have a single-line body.
   StyleGuide: "#if-as-a-modifier"
   Enabled: true
-  MaxLineLength: 80
 
 Style/IfUnlessModifierOfIfUnless:
   Description: Avoid modifier if/unless usage on conditionals.
@@ -555,14 +519,11 @@ Style/MethodMissing:
   StyleGuide: "#no-method-missing"
   Enabled: true
 
-Style/MethodName:
-  Description: Use the configured style when naming methods.
-  StyleGuide: "#snake-case-symbols-methods-vars"
+# Supports --auto-correct
+Style/MinMax:
+  Description: Use `Enumerable#minmax` instead of `Enumerable#min` and `Enumerable#max`
+    in conjunction.'
   Enabled: true
-  EnforcedStyle: snake_case
-  SupportedStyles:
-  - snake_case
-  - camelCase
 
 Style/MissingElse:
   Description: Require if/case expressions to have an else branches. If enabled, it
@@ -584,6 +545,10 @@ Style/MixinGrouping:
   SupportedStyles:
   - separated
   - grouped
+
+Style/MixinUsage:
+  Description: Checks that `include`, `extend` and `prepend` exists at the top level.
+  Enabled: true
 
 Style/ModuleFunction:
   Description: Checks for usage of `extend self` in modules.
@@ -663,6 +628,24 @@ Style/NestedParenthesizedCalls:
   Description: Parenthesize method calls which are nested inside the argument list of
     another parenthesized method call.
   Enabled: true
+  Whitelist:
+  - be
+  - be_a
+  - be_an
+  - be_between
+  - be_falsey
+  - be_kind_of
+  - be_instance_of
+  - be_truthy
+  - be_within
+  - eq
+  - eql
+  - end_with
+  - include
+  - match
+  - raise_error
+  - respond_to
+  - start_with
 
 Style/NestedTernaryOperator:
   Description: Use one expression per branch in a ternary operator.
@@ -736,11 +719,6 @@ Style/OneLineConditional:
   StyleGuide: "#ternary-operator"
   Enabled: true
 
-Style/OpMethod:
-  Description: When defining binary operators, name the argument other.
-  StyleGuide: "#other-arg"
-  Enabled: true
-
 Style/OptionHash:
   Description: Don't use option hashes when you can use keyword arguments.
   Enabled: false
@@ -755,6 +733,12 @@ Style/OptionalArguments:
   Description: Checks for optional arguments that do not appear at the end of the argument
     list
   StyleGuide: "#optional-arguments"
+  Enabled: true
+
+# Supports --auto-correct
+Style/OrAssignment:
+  Description: Recommend usage of double pipe equals (||=) where applicable.
+  StyleGuide: "#double-pipe-for-uninit"
   Enabled: true
 
 # Supports --auto-correct
@@ -799,23 +783,6 @@ Style/PerlBackrefs:
   StyleGuide: "#no-perl-regexp-last-matchers"
   Enabled: true
 
-Style/PredicateName:
-  Description: Check the names of predicate methods.
-  StyleGuide: "#bool-methods-qmark"
-  Enabled: true
-  NamePrefix:
-  - is_
-  - has_
-  - have_
-  NamePrefixBlacklist:
-  - is_
-  - has_
-  - have_
-  NameWhitelist:
-  - is_a?
-  Exclude:
-  - spec/**/*
-
 # Supports --auto-correct
 Style/PreferredHashMethods:
   Description: Checks use of `has_key?` and `has_value?` Hash methods.
@@ -843,9 +810,21 @@ Style/RaiseArgs:
   - exploded
 
 # Supports --auto-correct
+Style/RandomWithOffset:
+  Description: Prefer to use ranges when generating random numbers instead of integers
+    with offsets.
+  StyleGuide: "#random-numbers"
+  Enabled: true
+
+# Supports --auto-correct
 Style/RedundantBegin:
   Description: Don't use begin blocks when they are not needed.
   StyleGuide: "#begin-implicit"
+  Enabled: true
+
+# Supports --auto-correct
+Style/RedundantConditional:
+  Description: Don't return true/false from a conditional.
   Enabled: true
 
 # Supports --auto-correct
@@ -896,9 +875,27 @@ Style/RescueModifier:
   Enabled: true
 
 # Supports --auto-correct
+Style/RescueStandardError:
+  Description: Avoid rescuing without specifying an error class.
+  Enabled: true
+  EnforcedStyle: explicit
+  SupportedStyles:
+  - implicit
+  - explicit
+
+# Supports --auto-correct
+Style/ReturnNil:
+  Description: Use return instead of return nil.
+  Enabled: false
+  EnforcedStyle: return
+  SupportedStyles:
+  - return
+  - return_nil
+
+# Supports --auto-correct
 Style/SafeNavigation:
   Description: This cop transforms usages of a method call safeguarded by a check for
-    the existance of the object to safe navigation (`&.`).
+    the existence of the object to safe navigation (`&.`).
   Enabled: true
   ConvertCodeThatCanStartToReturnNil: false
 
@@ -971,6 +968,18 @@ Style/StabbyLambdaParentheses:
   - require_no_parentheses
 
 # Supports --auto-correct
+Style/StderrPuts:
+  Description: Use `warn` instead of `$stderr.puts`.
+  StyleGuide: "#warn"
+  Enabled: true
+
+# Supports --auto-correct
+Style/StringHashKeys:
+  Description: Prefer symbols instead of strings as hash keys.
+  StyleGuide: "#symbols-as-keys"
+  Enabled: false
+
+# Supports --auto-correct
 Style/StringLiterals:
   Description: Checks if uses of quotes match the configured preference.
   StyleGuide: "#consistent-string-literals"
@@ -1039,6 +1048,11 @@ Style/TernaryParentheses:
   AllowSafeAssignment: true
 
 # Supports --auto-correct
+Style/TrailingBodyOnMethodDefinition:
+  Description: Method body goes below definition.
+  Enabled: true
+
+# Supports --auto-correct
 Style/TrailingCommaInArguments:
   Description: Checks for trailing comma in argument lists.
   StyleGuide: "#no-trailing-params-comma"
@@ -1059,6 +1073,11 @@ Style/TrailingCommaInLiteral:
   - comma
   - consistent_comma
   - no_comma
+
+# Supports --auto-correct
+Style/TrailingMethodEndStatement:
+  Description: Checks for trailing end statement on line of method body.
+  Enabled: true
 
 # Supports --auto-correct
 Style/TrailingUnderscoreVariable:
@@ -1123,24 +1142,6 @@ Style/VariableInterpolation:
   StyleGuide: "#curlies-interpolate"
   Enabled: true
 
-Style/VariableName:
-  Description: Use the configured style when naming variables.
-  StyleGuide: "#snake-case-symbols-methods-vars"
-  Enabled: true
-  EnforcedStyle: snake_case
-  SupportedStyles:
-  - snake_case
-  - camelCase
-
-Style/VariableNumber:
-  Description: Use the configured style when numbering variables.
-  Enabled: true
-  EnforcedStyle: normalcase
-  SupportedStyles:
-  - snake_case
-  - normalcase
-  - non_integer
-
 # Supports --auto-correct
 Style/WhenThen:
   Description: Use when x then ... for one-line cases.
@@ -1158,7 +1159,6 @@ Style/WhileUntilModifier:
   Description: Favor modifier while/until usage when you have a single-line body.
   StyleGuide: "#while-as-a-modifier"
   Enabled: true
-  MaxLineLength: 80
 
 # Supports --auto-correct
 Style/WordArray:
@@ -1177,6 +1177,10 @@ Style/YodaCondition:
   Description: Do not use literals as the first operand of a comparison.
   Reference: https://en.wikipedia.org/wiki/Yoda_conditions
   Enabled: true
+  EnforcedStyle: all_comparison_operators
+  SupportedStyles:
+  - all_comparison_operators
+  - equality_operators_only
 
 # Supports --auto-correct
 Style/ZeroLengthPredicate:

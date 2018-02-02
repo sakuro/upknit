@@ -1,4 +1,4 @@
-# Department 'Performance' (24):
+# Department 'Performance' (26):
 Performance/Caller:
   Description: Use `caller(n..n)` instead of `caller`.
   Enabled: true
@@ -18,7 +18,7 @@ Performance/Casecmp:
 
 # Supports --auto-correct
 Performance/CompareWithBlock:
-  Description: Use `sort_by(&:foo)` instead of `sort_by { |a, b| a.foo <=> b.foo }`.
+  Description: Use `sort_by(&:foo)` instead of `sort { |a, b| a.foo <=> b.foo }`.
   Enabled: true
 
 # Supports --auto-correct
@@ -84,7 +84,7 @@ Performance/RangeInclude:
 # Supports --auto-correct
 Performance/RedundantBlockCall:
   Description: Use `yield` instead of `block.call`.
-  Reference: https://github.com/JuanitoFatas/fast-ruby#proccall-vs-yield-code
+  Reference: https://github.com/JuanitoFatas/fast-ruby#proccall-and-block-arguments-vs-yieldcode
   Enabled: true
 
 # Supports --auto-correct
@@ -127,7 +127,7 @@ Performance/Sample:
 Performance/Size:
   Description: Use `size` instead of `count` for counting the number of elements in
     `Array` and `Hash`.
-  Reference: https://github.com/JuanitoFatas/fast-ruby#arraycount-vs-arraysize-code
+  Reference: https://github.com/JuanitoFatas/fast-ruby#arraylength-vs-arraysize-vs-arraycount-code
   Enabled: true
 
 # Supports --auto-correct
@@ -148,4 +148,14 @@ Performance/StringReplacement:
 # Supports --auto-correct
 Performance/TimesMap:
   Description: Checks for .times.map calls.
+  AutoCorrect: false
+  Enabled: true
+
+Performance/UnfreezeString:
+  Description: Use unary plus to get an unfrozen string literal.
+  Enabled: true
+
+# Supports --auto-correct
+Performance/UriDefaultParser:
+  Description: Use `URI::DEFAULT_PARSER` instead of `URI::Parser.new`.
   Enabled: true
