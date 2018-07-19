@@ -17,6 +17,8 @@ Gem::Specification.new do |s|
   EOS
   s.license     = "MIT"
 
+  s.required_ruby_version = '>= 2.5'
+
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "rails", "~> 5.1"
