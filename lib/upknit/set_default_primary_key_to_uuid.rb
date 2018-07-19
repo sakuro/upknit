@@ -16,7 +16,7 @@ module Upknit
           when 'uuid-ossp'
             g.orm :active_record, primary_key_type: 'uuid, default: -> { "uuid_generate_v4()" }'
           else
-            $stderr.ptus 'upknit gem is installed, but UUUID is not supported'
+            $stderr.puts 'upknit gem is installed, but UUID is not supported'
             # UUID not supported
           end
         end
