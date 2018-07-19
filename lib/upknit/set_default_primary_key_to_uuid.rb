@@ -20,6 +20,9 @@ module Upknit
             # UUID not supported
           end
         end
+        Rails.logger.info('Default primary key is set to UUID.')
+      rescue ActiveRecord::NoDatabaseError
+        Rails.logger.info('No database found. Setting default primary key to UUID is skipped.')
       end
     end
   end
