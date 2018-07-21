@@ -49,6 +49,16 @@ Layout/AlignParameters:
   IndentationWidth:
 
 # Supports --auto-correct
+Layout/BlockAlignment:
+  Description: Align block ends correctly.
+  Enabled: true
+  EnforcedStyleAlignWith: either
+  SupportedStylesAlignWith:
+  - either
+  - start_of_block
+  - start_of_line
+
+# Supports --auto-correct
 Layout/BlockEndNewline:
   Description: Put end statement of multiline block on its own line.
   Enabled: true
@@ -93,6 +103,21 @@ Layout/ClosingParenthesisIndentation:
 Layout/CommentIndentation:
   Description: Indentation of comments.
   Enabled: true
+
+Layout/ConditionPosition:
+  Description: Checks for condition placed in a confusing position relative to the keyword.
+  StyleGuide: "#same-line-condition"
+  Enabled: true
+
+# Supports --auto-correct
+Layout/DefEndAlignment:
+  Description: Align ends corresponding to defs correctly.
+  Enabled: true
+  EnforcedStyleAlignWith: start_of_line
+  SupportedStylesAlignWith:
+  - start_of_line
+  - def
+  AutoCorrect: false
 
 # Supports --auto-correct
 Layout/DotPosition:
@@ -191,6 +216,17 @@ Layout/EmptyLinesAroundModuleBody:
   - empty_lines_except_namespace
   - empty_lines_special
   - no_empty_lines
+
+# Supports --auto-correct
+Layout/EndAlignment:
+  Description: Align ends correctly.
+  Enabled: true
+  EnforcedStyleAlignWith: keyword
+  SupportedStylesAlignWith:
+  - keyword
+  - variable
+  - start_of_line
+  AutoCorrect: false
 
 Layout/EndOfLine:
   Description: Use Unix-style line endings.

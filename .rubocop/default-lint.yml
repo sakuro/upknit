@@ -22,16 +22,6 @@ Lint/AssignmentInCondition:
   Enabled: true
   AllowSafeAssignment: true
 
-# Supports --auto-correct
-Lint/BlockAlignment:
-  Description: Align block ends correctly.
-  Enabled: true
-  EnforcedStyleAlignWith: either
-  SupportedStylesAlignWith:
-  - either
-  - start_of_block
-  - start_of_line
-
 Lint/BooleanSymbol:
   Description: Check for `:true` and `:false` symbols.
   Enabled: true
@@ -41,24 +31,9 @@ Lint/CircularArgumentReference:
     should not refer back to the name of the argument.
   Enabled: true
 
-Lint/ConditionPosition:
-  Description: Checks for condition placed in a confusing position relative to the keyword.
-  StyleGuide: "#same-line-condition"
-  Enabled: true
-
 Lint/Debugger:
   Description: Check for debugger calls.
   Enabled: true
-
-# Supports --auto-correct
-Lint/DefEndAlignment:
-  Description: Align ends corresponding to defs correctly.
-  Enabled: true
-  EnforcedStyleAlignWith: start_of_line
-  SupportedStylesAlignWith:
-  - start_of_line
-  - def
-  AutoCorrect: false
 
 # Supports --auto-correct
 Lint/DeprecatedClassMethods:
@@ -103,17 +78,6 @@ Lint/EmptyInterpolation:
 Lint/EmptyWhen:
   Description: Checks for `when` branches with empty bodies.
   Enabled: true
-
-# Supports --auto-correct
-Lint/EndAlignment:
-  Description: Align ends correctly.
-  Enabled: true
-  EnforcedStyleAlignWith: keyword
-  SupportedStylesAlignWith:
-  - keyword
-  - variable
-  - start_of_line
-  AutoCorrect: false
 
 Lint/EndInMethod:
   Description: END blocks should not be placed inside method definitions.
@@ -302,12 +266,6 @@ Lint/UnderscorePrefixedVariableName:
 # Supports --auto-correct
 Lint/UnifiedInteger:
   Description: Use Integer instead of Fixnum or Bignum
-  Enabled: true
-
-# Supports --auto-correct
-Lint/UnneededDisable:
-  Description: 'Checks for rubocop:disable comments that can be removed. Note: this
-    cop is not disabled when disabling all cops. It must be explicitly disabled.'
   Enabled: true
 
 # Supports --auto-correct

@@ -23,10 +23,10 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 5.1"
 
-  s.add_development_dependency "pg", '~> 0.18'
+  s.add_development_dependency "pg", '~> 1.0'
   s.add_development_dependency "rspec-rails"
   s.add_development_dependency "yard"
   s.add_development_dependency "kramdown"
-  s.add_development_dependency "rubocop", '= 0.52.1'
-  s.add_development_dependency "rubocop-rspec"
+  s.add_development_dependency "rubocop", '~> 0.58.1'
+  s.add_development_dependency "rubocop-rspec", '~> 1.27.0'
 end

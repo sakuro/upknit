@@ -514,11 +514,6 @@ Style/MethodDefParentheses:
   - require_no_parentheses
   - require_no_parentheses_except_multiline
 
-Style/MethodMissing:
-  Description: Avoid using `method_missing`.
-  StyleGuide: "#no-method-missing"
-  Enabled: true
-
 # Supports --auto-correct
 Style/MinMax:
   Description: Use `Enumerable#minmax` instead of `Enumerable#min` and `Enumerable#max`
@@ -1056,17 +1051,6 @@ Style/TrailingBodyOnMethodDefinition:
 Style/TrailingCommaInArguments:
   Description: Checks for trailing comma in argument lists.
   StyleGuide: "#no-trailing-params-comma"
-  Enabled: true
-  EnforcedStyleForMultiline: no_comma
-  SupportedStylesForMultiline:
-  - comma
-  - consistent_comma
-  - no_comma
-
-# Supports --auto-correct
-Style/TrailingCommaInLiteral:
-  Description: Checks for trailing comma in array and hash literals.
-  StyleGuide: "#no-trailing-array-commas"
   Enabled: true
   EnforcedStyleForMultiline: no_comma
   SupportedStylesForMultiline:
