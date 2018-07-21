@@ -118,6 +118,12 @@ Rails/UniqBeforePluck:
 Rails/Validation:
   Enabled: true
 
+RSpec/AlignLeftLetBrace:
+  Enabled: false
+
+RSpec/AlignRightLetBrace:
+  Enabled: false
+
 Style/AutoResourceCleanup:
   Enabled: true
 
