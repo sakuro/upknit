@@ -148,6 +148,9 @@ Style/FormatString:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+Style/IfUnlessModifier:
+  Enabled: false
+
 Style/PercentLiteralDelimiters:
   Enabled: false
 
