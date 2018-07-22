@@ -2,6 +2,7 @@ require 'active_support/concern'
 require 'upknit/connection_extension'
 
 module Upknit
+  # A module to add an initializer for setting AR's default primary key type to UUID
   module SetDefaultPrimaryKeyToUuid
     extend ActiveSupport::Concern
 

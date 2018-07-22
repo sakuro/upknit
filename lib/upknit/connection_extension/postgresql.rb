@@ -1,14 +1,12 @@
 require 'active_record/connection_adapters/postgresql_adapter'
 
-# An extension to {ActiveRecord::ConnectionAdapters::PostgresqlAdapter}.
-#
-# When included, this module adds two methods to support UUID extension
-# * #enable_uuid
-# * #uuid_extension
 module Upknit
   module ConnectionExtension
+    # An extension to ActiveRecord::ConnectionAdapters::PostgresqlAdapter
+    #
+    # When included, this module adds two methods to support UUID extension.
     module PostgreSQL
-      # Enables a extension which adds UUID function to the system.
+      # Enables an extension which adds UUID function to the system.
       # @return [void]
       def enable_uuid
         enable_extension(uuid_extension)
