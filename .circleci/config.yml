@@ -3,8 +3,13 @@ jobs:
   build:
     docker:
        - image: circleci/ruby:2.5-browsers
+         environment:
+          PGUSER: postgres
        - image: circleci/postgres:9.6
-    working_directory: ~/repo
+         environment:
+          PGUSER: postgres
+
+          working_directory: ~/repo
     steps:
       - checkout
       - restore_cache:
