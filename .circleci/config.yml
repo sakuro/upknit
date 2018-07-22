@@ -1,0 +1,20 @@
+version: 2
+jobs:
+  build:
+    docker:
+       - image: circleci/ruby:2.5-browsers
+       - image: circleci/postgres:9.6
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - v1-dependencies-
+      - run: bundle install --jobs=4 --retry=3 --path vendor/bundle
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+      - run: bundle exec rails db:create db:migrate
+      - run: bundle exec rubocop
+      - run: bundle exec rails spec
