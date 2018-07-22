@@ -1,3 +1,5 @@
+![CircleCI](https://img.shields.io/circleci/project/github/sakuro/upknit.svg)
+
 # Upknit
 
 Adding this gem to a Rails application with PostgreSQL automatically enables UUID primary key.
